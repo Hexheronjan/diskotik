@@ -1,7 +1,35 @@
 "use server";
 
+import { z } from "zod";
 import { db } from "@/lib/db";
-import { reservationSchema } from "@/lib/validation";
+
+const reservationActionSchema = z.object({
+  customerName: z
+    .string()
+    .trim()
+    .min(3, "Nama minimal 3 karakter.")
+    .max(120, "Nama terlalu panjang."),
+  customerPhone: z
+    .string()
+    .trim()
+    .min(9, "Nomor telepon minimal 9 digit.")
+    .max(20, "Nomor telepon maksimal 20 digit."),
+  customerEmail: z
+    .string()
+    .trim()
+    .email("Format email tidak valid.")
+    .optional()
+    .or(z.literal("")),
+  guestCount: z.coerce
+    .number()
+    .min(1, "Minimal 1 tamu.")
+    .max(50, "Maksimal 50 tamu."),
+  reservedFor: z
+    .string()
+    .min(1, "Tanggal kunjungan wajib dipilih."),
+  packageSlug: z.string().optional(),
+  notes: z.string().max(500, "Catatan maksimal 500 karakter.").optional(),
+});
 
 export type ReservationActionResult =
   | {
@@ -30,7 +58,7 @@ export async function createReservationAction(formData: FormData): Promise<Reser
     notes: formData.get("notes") || undefined,
   };
 
-  const parsed = reservationSchema.safeParse(raw);
+  const parsed = reservationActionSchema.safeParse(raw);
   if (!parsed.success) {
     const fieldErrors: Record<string, string> = {};
     for (const issue of parsed.error.issues) {

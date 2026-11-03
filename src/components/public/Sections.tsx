@@ -1,5 +1,4 @@
 // Reusable public sections: opening hours and the interactive Ponorogo venue & contact hub.
-import { GlassPanel } from "@/components/ui/GlassPanel";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import type { SiteSettings } from "@/lib/queries";
@@ -7,38 +6,48 @@ import styles from "./Page.module.css";
 
 export function OpeningHours({ settings }: { settings: SiteSettings }) {
   return (
-    <GlassPanel>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "var(--space-4)", flexWrap: "wrap", gap: "8px" }}>
-        <h3 className={styles.subtitle} style={{ margin: 0 }}>Jam Operasional Klub</h3>
-        <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "0.75rem", fontWeight: 700, padding: "3px 10px", borderRadius: "999px", background: "rgba(255, 255, 255, 0.1)", color: "#ffffff", border: "1px solid rgba(255, 255, 255, 0.25)" }}>
-          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#ffffff", boxShadow: "0 0 8px #ffffff" }} />
-          Buka Malam Ini
+    <div className={styles.scheduleConsole}>
+      <div className={styles.scheduleHeader}>
+        <div className={styles.scheduleTitleRow}>
+          <Icon name="clock" size={20} style={{ color: "var(--color-gold)" }} />
+          <h3 className={styles.scheduleHeading}>Jam Operasional Klub</h3>
+        </div>
+        <span className={styles.liveStatusTag}>
+          <span className={styles.liveDot} />
+          Buka Malam Ini (18.00 - 03.00 WIB)
         </span>
       </div>
 
-      {settings.openingHours.length === 0 ? (
-        <p className={styles.muted}>Jam buka belum tersedia.</p>
-      ) : (
-        <ul className={styles.hours}>
-          {settings.openingHours.map((h) => (
-            <li key={h.day}>
-              <span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <Icon name="clock" size={14} style={{ color: "#ffffff" }} />
-                <span>{h.day}</span>
-              </span>
-              <span style={{ color: "#fff", fontWeight: 600 }}>{h.hours}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      <div style={{ marginTop: "var(--space-4)", paddingTop: "var(--space-3)", borderTop: "1px solid var(--color-border)", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "8px" }}>
-        <span style={{ fontSize: "0.8125rem", color: "#ffffff", opacity: 0.9 }}>Reservasi meja sofa disarankan sebelum pukul 21.00 WIB</span>
-        <a href="/reservasi" style={{ fontSize: "0.8125rem", fontWeight: 700, color: "var(--color-gold)", textDecoration: "none" }}>
-          Pesan Meja Sekarang →
-        </a>
+      <div className={styles.scheduleGrid}>
+        {settings.openingHours.map((h) => (
+          <div key={h.day} className={styles.scheduleItem}>
+            <span className={styles.scheduleDay}>{h.day}</span>
+            <span className={styles.scheduleHours}>{h.hours}</span>
+          </div>
+        ))}
       </div>
-    </GlassPanel>
+
+      <div className={styles.scheduleFooter}>
+        <span className={styles.scheduleHint}>
+          Khusus 18+ • Reservasi meja sofa VIP disarankan lebih awal untuk akhir pekan.
+        </span>
+        <div className={styles.scheduleActions}>
+          <a
+            href="https://wa.me/6285151951806?text=Halo%20Prajalinks,%20saya%20ingin%20info%20reservasi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.scheduleWaBtn}
+          >
+            <Icon name="whatsapp" size={16} />
+            <span>Hotline 0851-5195-1806</span>
+          </a>
+          <a href="/reservasi" className={styles.scheduleBookBtn}>
+            <Icon name="crown" size={16} />
+            <span>Reservasi Online</span>
+          </a>
+        </div>
+      </div>
+    </div>
   );
 }
 

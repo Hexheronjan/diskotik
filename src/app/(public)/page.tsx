@@ -3,7 +3,6 @@ import { DjCard, EventCard, FeaturedEventCard, VipCard } from "@/components/publ
 import { Location, OpeningHours } from "@/components/public/Sections";
 import { ButtonLink } from "@/components/ui/Button";
 import { GlassPanel } from "@/components/ui/GlassPanel";
-import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { EmptyState, SectionHeading } from "@/components/ui/SectionHeading";
 import { getDjs, getSettings, getUpcomingPreview, getVipPackages } from "@/lib/queries";
@@ -23,71 +22,109 @@ export default async function HomePage() {
     <>
       <Hero siteName={settings.siteName} />
 
-      {/* Section: Selamat Datang di Diskotik Prajalinks Ponorogo & Jam Buka */}
+      {/* Section: The Signature Diskotik Experience */}
       <section className={`container ${styles.section}`} aria-labelledby="tentang-singkat">
-        <div className={styles.split}>
-          <Reveal direction="left" delay={100}>
-            <div className={styles.stack}>
-              <SectionHeading eyebrow="Sensasi Diskotik Ponorogo" title={`Malam Pesta Tanpa Batas di ${settings.siteName}`} />
-              <div className={styles.prose} id="tentang-singkat">
-                <p>{settings.aboutIntro}</p>
-              </div>
+        <Reveal direction="up" delay={80}>
+          <div className={styles.experienceHeader}>
+            <div className={styles.eyebrowBadge}>
+              <span className={styles.liveDot} />
+              <span>THE PREMIER NIGHTLIFE DESTINATION</span>
+            </div>
+            <h2 id="tentang-singkat" className={styles.experienceTitle}>
+              Sensasi Pesta Diskotik &amp; Kemewahan VIP di Ponorogo
+            </h2>
+            <p className={styles.experienceSubtitle}>
+              {settings.aboutIntro ||
+                "Prajalinks menghadirkan standar baru hiburan malam kelas atas di Jawa Timur. Panggung audio visual spektakuler, tata suara arena 50.000W, kurasi resident DJ terbaik, serta kenyamanan sofa VVIP eksklusif."}
+            </p>
+          </div>
+        </Reveal>
 
-              {/* 4 Feature Cards Grid */}
-              <div className={styles.featureGrid}>
-                <div className={styles.featureCard}>
-                  <div className={styles.featureIconBox}>
-                    <Icon name="music" size={18} />
-                  </div>
-                  <h3 className={styles.featureHeading}>50.000W Sound Arena</h3>
-                  <p className={styles.featureText}>
-                    Dentuman bass bertenaga dan kejernihan audio line-array kelas konser internasional.
-                  </p>
-                </div>
-
-                <div className={styles.featureCard}>
-                  <div className={styles.featureIconBox}>
-                    <Icon name="sparkle" size={18} />
-                  </div>
-                  <h3 className={styles.featureHeading}>Smart Laser &amp; Beam</h3>
-                  <p className={styles.featureText}>
-                    Atraksi pencahayaan moving heads spektakuler yang disinkronkan langsung dengan tempo musik.
-                  </p>
-                </div>
-
-                <div className={styles.featureCard}>
-                  <div className={styles.featureIconBox}>
-                    <Icon name="crown" size={18} />
-                  </div>
-                  <h3 className={styles.featureHeading}>VIP Dedicated Butler</h3>
-                  <p className={styles.featureText}>
-                    Kenyamanan sofa privat dengan staf pelayan pribadi dan akses masuk tanpa antre.
-                  </p>
-                </div>
-
-                <div className={styles.featureCard}>
-                  <div className={styles.featureIconBox}>
-                    <Icon name="glass" size={18} />
-                  </div>
-                  <h3 className={styles.featureHeading}>Craft Mixology &amp; Bites</h3>
-                  <p className={styles.featureText}>
-                    Kurasi mocktail segar, sajian tapas lezat, dan botol beverage pendamping pesta.
-                  </p>
-                </div>
-              </div>
-
-              <div style={{ marginTop: "var(--space-2)" }}>
-                <ButtonLink href="/tentang-kami" icon="arrow">
-                  Kenali Kami Lebih Dek
-                </ButtonLink>
+        {/* 4 Visual Experience Pillar Cards */}
+        <div className={styles.experienceGrid}>
+          <Reveal direction="left" delay={120}>
+            <div className={styles.pillarCard}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=700&q=80"
+                alt="50.000W Arena Sound System"
+                className={styles.pillarImg}
+              />
+              <div className={styles.pillarOverlay} />
+              <div className={styles.pillarContent}>
+                <span className={styles.pillarBadge}>Tata Suara Arena</span>
+                <h3 className={styles.pillarTitle}>50.000W Sound System</h3>
+                <p className={styles.pillarDesc}>
+                  Line-array audio system kelas konser dengan dentuman bass berfrekuensi rendah yang memacu lantai dansa.
+                </p>
               </div>
             </div>
           </Reveal>
 
-          <Reveal direction="right" delay={200}>
-            <OpeningHours settings={settings} />
+          <Reveal direction="left" delay={200}>
+            <div className={styles.pillarCard}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=700&q=80"
+                alt="Smart Moving Laser Light Show"
+                className={styles.pillarImg}
+              />
+              <div className={styles.pillarOverlay} />
+              <div className={styles.pillarContent}>
+                <span className={styles.pillarBadge}>Visual &amp; Lighting</span>
+                <h3 className={styles.pillarTitle}>Smart Moving Lasers</h3>
+                <p className={styles.pillarDesc}>
+                  Atraksi beam laser panggung bergerak dan haze effects spektakuler yang sinkron dengan alunan musik.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal direction="right" delay={280}>
+            <div className={styles.pillarCard}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=700&q=80"
+                alt="Exclusive VIP Sofa Suites"
+                className={styles.pillarImg}
+              />
+              <div className={styles.pillarOverlay} />
+              <div className={styles.pillarContent}>
+                <span className={styles.pillarBadge}>VIP &amp; VVIP Lounge</span>
+                <h3 className={styles.pillarTitle}>Private Butler Service</h3>
+                <p className={styles.pillarDesc}>
+                  Kenyamanan sofa privat dengan pemandangan langsung ke panggung DJ, botol minuman premium, dan personal host.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal direction="right" delay={360}>
+            <div className={styles.pillarCard}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=700&q=80"
+                alt="Craft Mixology & Bites"
+                className={styles.pillarImg}
+              />
+              <div className={styles.pillarOverlay} />
+              <div className={styles.pillarContent}>
+                <span className={styles.pillarBadge}>Bar &amp; Kitchen</span>
+                <h3 className={styles.pillarTitle}>Craft Mixology &amp; Bites</h3>
+                <p className={styles.pillarDesc}>
+                  Kurasi mocktail segar, sajian tapas istimewa, dan ragam signature drinks racikan bartender profesional.
+                </p>
+              </div>
+            </div>
           </Reveal>
         </div>
+
+        {/* Operating Hours & Fast Action Console */}
+        <Reveal direction="up" delay={250}>
+          <div style={{ marginTop: "var(--space-8)" }}>
+            <OpeningHours settings={settings} />
+          </div>
+        </Reveal>
       </section>
 
       {/* Section: Jadwal Pesta Diskotik / Acara Spektakuler Mendatang */}
