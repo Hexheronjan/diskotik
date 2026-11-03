@@ -3,16 +3,18 @@ import type { NextAuthConfig } from "next-auth";
 import { PERMISSIONS, hasPermission } from "@/lib/permissions";
 
 export const authConfig = {
-  pages: { signIn: "/masuk" },
+  pages: { signIn: "/login" },
   session: { strategy: "jwt", maxAge: 60 * 60 * 8 },
   providers: [],
   callbacks: {
-    // Runs in the proxy for every matched request: protects /admin and redirects /masuk when already signed in.
+    // Runs in the proxy for every matched request: protects /admin and redirects /login or /masuk when already signed in.
     authorized({ auth, request: { nextUrl } }) {
       const signedIn = !!auth?.user;
       const isAdminArea = nextUrl.pathname.startsWith("/admin");
       if (isAdminArea) return signedIn && hasPermission(auth?.user?.role, PERMISSIONS.DASHBOARD_VIEW);
-      if (nextUrl.pathname === "/masuk" && signedIn) return Response.redirect(new URL("/admin", nextUrl));
+      if ((nextUrl.pathname === "/masuk" || nextUrl.pathname === "/login") && signedIn) {
+        return Response.redirect(new URL("/admin", nextUrl));
+      }
       return true;
     },
     jwt({ token, user }) {

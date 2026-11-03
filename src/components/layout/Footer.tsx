@@ -87,7 +87,6 @@ export function Footer({ settings }: { settings: SiteSettings }) {
       </div>
       <div className={`container ${styles.bottom}`}>
         <p>© {settings.siteName}. Seluruh hak cipta dilindungi.</p>
-        <Link href="/masuk" className={styles.footLink}>Masuk Staf</Link>
       </div>
       <div className={styles.wordmark} aria-hidden="true">
         {settings.siteName}
