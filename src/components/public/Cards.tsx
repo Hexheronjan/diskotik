@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
 import { Media } from "@/components/ui/Media";
+import { ClubImage } from "@/components/ui/ClubImage";
 import { StatusBadge } from "@/components/ui/SectionHeading";
 import { formatDay, formatMonth, formatRupiah, formatTime } from "@/lib/format";
 import styles from "./Cards.module.css";
@@ -76,8 +77,12 @@ export function FeaturedEventCard({ event }: { event: CardEventItem }) {
             {event.djs.map((d) => (
               <span key={d.dj.name} className={styles.djChip}>
                 {d.dj.photoUrl ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={d.dj.photoUrl} alt="" className={styles.djChipAvatar} />
+                  <ClubImage
+                    src={d.dj.photoUrl}
+                    alt=""
+                    className={styles.djChipAvatar}
+                    fallbackSrc="https://images.unsplash.com/photo-1563841930606-67e2bce48b78?auto=format&fit=crop&w=400&q=80"
+                  />
                 ) : (
                   <Icon name="music" size={12} />
                 )}
@@ -160,8 +165,12 @@ export function DjCard({ dj }: { dj: CardDjItem }) {
       <div className={styles.djAvatarFrame}>
         <div className={styles.djVinylHalo} aria-hidden="true" />
         {dj.photoUrl ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={dj.photoUrl} alt={dj.name} className={styles.djAvatarImg} />
+          <ClubImage
+            src={dj.photoUrl}
+            alt={dj.name}
+            className={styles.djAvatarImg}
+            fallbackSrc="https://images.unsplash.com/photo-1563841930606-67e2bce48b78?auto=format&fit=crop&w=900&q=80"
+          />
         ) : (
           <div className={styles.djAvatarImg} style={{ background: "#221c2e" }} />
         )}

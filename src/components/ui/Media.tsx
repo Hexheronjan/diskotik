@@ -1,5 +1,6 @@
 // Image container with natural aspect ratio and subtle dark overlay.
 import { Icon } from "./Icon";
+import { ClubImage } from "./ClubImage";
 import styles from "./Media.module.css";
 
 interface MediaProps {
@@ -15,8 +16,7 @@ export function Media({ src, name, ratio = "4 / 3", className }: MediaProps) {
     <div className={`${styles.media} ${className ?? ""}`} style={{ aspectRatio: ratio }}>
       {src ? (
         <div className={styles.imageWrap}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={src} alt={name} loading="lazy" decoding="async" className={styles.image} />
+          <ClubImage src={src} alt={name} loading="lazy" decoding="async" className={styles.image} />
           <div className={styles.overlay} />
         </div>
       ) : (

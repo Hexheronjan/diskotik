@@ -1,15 +1,21 @@
 import { Hero } from "@/components/hero/Hero";
-import { DjCard, EventCard, FeaturedEventCard } from "@/components/public/Cards";
+import { DjCard, EventCard, FeaturedEventCard, VipCard } from "@/components/public/Cards";
 import { Location, OpeningHours } from "@/components/public/Sections";
 import { ButtonLink } from "@/components/ui/Button";
 import { GlassPanel } from "@/components/ui/GlassPanel";
+import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { EmptyState, SectionHeading } from "@/components/ui/SectionHeading";
-import { getDjs, getSettings, getUpcomingPreview } from "@/lib/queries";
+import { getDjs, getSettings, getUpcomingPreview, getVipPackages } from "@/lib/queries";
 import styles from "@/components/public/Page.module.css";
 
 export default async function HomePage() {
-  const [settings, events, djs] = await Promise.all([getSettings(), getUpcomingPreview(3), getDjs(3)]);
+  const [settings, events, djs, vipPackages] = await Promise.all([
+    getSettings(),
+    getUpcomingPreview(3),
+    getDjs(3),
+    getVipPackages(),
+  ]);
 
   const [headliner, ...otherEvents] = events;
 
@@ -26,7 +32,51 @@ export default async function HomePage() {
               <div className={styles.prose} id="tentang-singkat">
                 <p>{settings.aboutIntro}</p>
               </div>
-              <div>
+
+              {/* 4 Feature Cards Grid */}
+              <div className={styles.featureGrid}>
+                <div className={styles.featureCard}>
+                  <div className={styles.featureIconBox}>
+                    <Icon name="music" size={18} />
+                  </div>
+                  <h3 className={styles.featureHeading}>50.000W Sound Arena</h3>
+                  <p className={styles.featureText}>
+                    Dentuman bass bertenaga dan kejernihan audio line-array kelas konser internasional.
+                  </p>
+                </div>
+
+                <div className={styles.featureCard}>
+                  <div className={styles.featureIconBox}>
+                    <Icon name="sparkle" size={18} />
+                  </div>
+                  <h3 className={styles.featureHeading}>Smart Laser &amp; Beam</h3>
+                  <p className={styles.featureText}>
+                    Atraksi pencahayaan moving heads spektakuler yang disinkronkan langsung dengan tempo musik.
+                  </p>
+                </div>
+
+                <div className={styles.featureCard}>
+                  <div className={styles.featureIconBox}>
+                    <Icon name="crown" size={18} />
+                  </div>
+                  <h3 className={styles.featureHeading}>VIP Dedicated Butler</h3>
+                  <p className={styles.featureText}>
+                    Kenyamanan sofa privat dengan staf pelayan pribadi dan akses masuk tanpa antre.
+                  </p>
+                </div>
+
+                <div className={styles.featureCard}>
+                  <div className={styles.featureIconBox}>
+                    <Icon name="glass" size={18} />
+                  </div>
+                  <h3 className={styles.featureHeading}>Craft Mixology &amp; Bites</h3>
+                  <p className={styles.featureText}>
+                    Kurasi mocktail segar, sajian tapas lezat, dan botol beverage pendamping pesta.
+                  </p>
+                </div>
+              </div>
+
+              <div style={{ marginTop: "var(--space-2)" }}>
                 <ButtonLink href="/tentang-kami" icon="arrow">
                   Kenali Kami Lebih Dek
                 </ButtonLink>
@@ -40,7 +90,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Section: Jadwal Pesta Diskotik / Acara Spektakuler Mendatang (Tata Letak Unik: Headline + Lineup) */}
+      {/* Section: Jadwal Pesta Diskotik / Acara Spektakuler Mendatang */}
       <section className={`container ${styles.section}`} aria-labelledby="acara-mendatang">
         <Reveal direction="up" delay={50}>
           <SectionHeading
@@ -86,7 +136,7 @@ export default async function HomePage() {
         )}
       </section>
 
-      {/* Section: Resonansi Irama & DJ (Tata Letak Unik: DJ Console & Deck Roster) */}
+      {/* Section: Resonansi Irama & DJ */}
       <section className={`container ${styles.section}`}>
         <Reveal direction="up" delay={50}>
           <SectionHeading
@@ -117,6 +167,35 @@ export default async function HomePage() {
         )}
       </section>
 
+      {/* Section: Paket VIP Showcase */}
+      {vipPackages.length > 0 ? (
+        <section className={`container ${styles.section}`}>
+          <Reveal direction="up" delay={50}>
+            <SectionHeading
+              eyebrow="Pengalaman VIP Eksklusif"
+              title="Paket Meja Sofa &amp; Lounge VIP"
+              description="Pilih zona sofa privat favorit Anda dengan sudut pandang terbaik ke panggung DJ, fasilitas butler, dan minuman premium."
+              action={
+                <ButtonLink href="/vip" variant="ghost" icon="arrow">
+                  Semua paket VIP
+                </ButtonLink>
+              }
+            />
+          </Reveal>
+          <div className={styles.grid3}>
+            {vipPackages.slice(0, 3).map((pkg, index) => {
+              const direction = index === 0 ? "left" : index === 1 ? "up" : "right";
+              const delay = 100 + index * 120;
+              return (
+                <Reveal key={pkg.id} direction={direction} delay={delay}>
+                  <VipCard pkg={pkg} />
+                </Reveal>
+              );
+            })}
+          </div>
+        </section>
+      ) : null}
+
       {/* Section: VIP Lounge CTA Banner */}
       <section className={`container ${styles.section}`}>
         <Reveal direction="up" delay={150}>
@@ -138,7 +217,7 @@ export default async function HomePage() {
         </Reveal>
       </section>
 
-      {/* Section: Kunjungi Diskotik Kami / Lokasi & Akses Mudah (Ponorogo Hub + WhatsApp + Instagram) */}
+      {/* Section: Kunjungi Diskotik Kami (Strictly Maps, WA, IG) */}
       <section className={`container ${styles.section}`}>
         <Reveal direction="up" delay={50}>
           <SectionHeading

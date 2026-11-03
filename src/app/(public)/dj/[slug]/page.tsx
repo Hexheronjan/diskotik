@@ -38,7 +38,6 @@ export default async function DjDetailPage({ params }: Props) {
   const socials = [
     { href: httpsOnly(dj.instagram), label: "Instagram", icon: "instagram" as const },
     { href: httpsOnly(dj.spotify), label: "Spotify", icon: "spotify" as const },
-    { href: httpsOnly(dj.youtube), label: "YouTube", icon: "youtube" as const },
   ].filter((s) => s.href);
 
   return (

@@ -5,17 +5,35 @@ import styles from "./Footer.module.css";
 
 export function SocialLinks({ settings }: { settings: SiteSettings }) {
   const items: { href: string; label: string; icon: IconName }[] = [
-    { href: settings.instagramUrl, label: "Instagram", icon: "instagram" as const },
-    { href: settings.facebookUrl, label: "Facebook", icon: "facebook" as const },
-    { href: settings.tiktokUrl, label: "TikTok", icon: "tiktok" as const },
-    { href: settings.youtubeUrl, label: "YouTube", icon: "youtube" as const },
-  ].filter((i) => i.href);
-  if (items.length === 0) return null;
+    {
+      href: settings.instagramUrl || "https://instagram.com/prajalinks",
+      label: "Instagram @prajalinks",
+      icon: "instagram" as const,
+    },
+    {
+      href: settings.whatsappLink || "https://wa.me/6285151951806",
+      label: "WhatsApp 0851-5195-1806",
+      icon: "whatsapp" as const,
+    },
+    {
+      href: "https://www.google.com/maps/search/?api=1&query=Ponorogo,+Jawa+Timur",
+      label: "Google Maps Ponorogo",
+      icon: "pin" as const,
+    },
+  ];
+
   return (
     <ul className={styles.social}>
       {items.map((i) => (
         <li key={i.label}>
-          <a href={i.href} target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label={`${i.label} (tab baru)`}>
+          <a
+            href={i.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.socialLink}
+            aria-label={`${i.label} (tab baru)`}
+            title={i.label}
+          >
             <Icon name={i.icon} size={20} />
           </a>
         </li>
@@ -40,6 +58,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
             <li><Link href="/dj" className={styles.footLink}>DJ</Link></li>
             <li><Link href="/menu" className={styles.footLink}>Menu</Link></li>
             <li><Link href="/vip" className={styles.footLink}>Paket VIP</Link></li>
+            <li><Link href="/reservasi" className={styles.footLink}>Reservasi Meja</Link></li>
             <li><Link href="/tentang-kami" className={styles.footLink}>Tentang Kami</Link></li>
           </ul>
         </nav>

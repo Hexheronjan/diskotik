@@ -71,9 +71,9 @@ async function seedSettings() {
       { day: "Minggu", hours: "18.00 - 00.00 WIB" },
     ]),
     instagram_url: "https://instagram.com/prajalinks",
-    facebook_url: "https://facebook.com/prajalinks",
-    tiktok_url: "https://tiktok.com/@prajalinks",
-    youtube_url: "https://youtube.com/@prajalinks",
+    facebook_url: "",
+    tiktok_url: "",
+    youtube_url: "",
     maps_embed_url: "https://www.google.com/maps?q=Ponorogo,+Jawa+Timur,+Indonesia&output=embed",
     about_intro:
       "Prajalinks merupakan destinasi diskotik & premium nightlife lounge terdepan di Ponorogo, Jawa Timur. Menggabungkan kemegahan tata suara arena, sorotan lampu panggung spektakuler, serta kurasi DJ dan perayaan malam tak tertandingi.",

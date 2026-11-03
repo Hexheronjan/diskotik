@@ -8,19 +8,36 @@ import styles from "./Page.module.css";
 export function OpeningHours({ settings }: { settings: SiteSettings }) {
   return (
     <GlassPanel>
-      <h3 className={styles.subtitle}>Jam Buka Diskotik</h3>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "var(--space-4)", flexWrap: "wrap", gap: "8px" }}>
+        <h3 className={styles.subtitle} style={{ margin: 0 }}>Jam Operasional Klub</h3>
+        <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "0.75rem", fontWeight: 700, padding: "3px 10px", borderRadius: "999px", background: "rgba(0, 240, 255, 0.12)", color: "#00f0ff", border: "1px solid rgba(0, 240, 255, 0.3)" }}>
+          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#00f0ff", boxShadow: "0 0 8px #00f0ff" }} />
+          Buka Malam Ini
+        </span>
+      </div>
+
       {settings.openingHours.length === 0 ? (
         <p className={styles.muted}>Jam buka belum tersedia.</p>
       ) : (
         <ul className={styles.hours}>
           {settings.openingHours.map((h) => (
             <li key={h.day}>
-              <span>{h.day}</span>
-              <span>{h.hours}</span>
+              <span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <Icon name="clock" size={14} style={{ color: "var(--color-gold)" }} />
+                <span>{h.day}</span>
+              </span>
+              <span style={{ color: "#fff", fontWeight: 600 }}>{h.hours}</span>
             </li>
           ))}
         </ul>
       )}
+
+      <div style={{ marginTop: "var(--space-4)", paddingTop: "var(--space-3)", borderTop: "1px solid var(--color-border)", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "8px" }}>
+        <span style={{ fontSize: "0.8125rem", color: "var(--color-muted)" }}>Reservasi meja sofa disarankan sebelum pukul 21.00 WIB</span>
+        <a href="/reservasi" style={{ fontSize: "0.8125rem", fontWeight: 700, color: "var(--color-gold)", textDecoration: "none" }}>
+          Pesan Meja Sekarang →
+        </a>
+      </div>
     </GlassPanel>
   );
 }

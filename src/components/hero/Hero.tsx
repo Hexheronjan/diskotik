@@ -1,6 +1,5 @@
 // High-energy Diskotik & Premium Nightclub Hero section with smooth slide animations.
 import { ButtonLink } from "@/components/ui/Button";
-import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { HeroBackdrop } from "./HeroBackdrop";
 import styles from "./Hero.module.css";
@@ -13,8 +12,8 @@ export function Hero({ siteName }: { siteName: string }) {
         <Reveal direction="left" delay={100}>
           <div className={styles.pretitle}>
             <span className={styles.pulseDot} />
-            <span className={styles.eyebrow}>High-Energy Diskotik &amp; VIP Club</span>
-            <span className={styles.equalizerMini}>
+            <span className={styles.eyebrow}>Live Tonight • High-Energy Diskotik &amp; VIP Club</span>
+            <span className={styles.equalizerMini} aria-hidden="true">
               <span className={styles.eqBar} style={{ animationDelay: "0s" }} />
               <span className={styles.eqBar} style={{ animationDelay: "0.2s" }} />
               <span className={styles.eqBar} style={{ animationDelay: "0.4s" }} />
@@ -24,49 +23,50 @@ export function Hero({ siteName }: { siteName: string }) {
 
         <Reveal direction="left" delay={220}>
           <h1 id="judul-hero" className={styles.title}>
-            Dentuman Bass &amp; Pesta Diskotik Spektakuler di {siteName}.
+            Diskotik &amp; VIP Lounge Paling Bergengsi di{" "}
+            <span className={styles.titleAccent}>{siteName} Ponorogo</span>.
           </h1>
         </Reveal>
 
         <Reveal direction="up" delay={340}>
           <p className={styles.tagline}>
-            Destinasi hiburan malam dan lantai dansa paling bergengsi di Ponorogo, Jawa Timur. Rasakan
-            hentakan musik DJ kelas dunia, pertunjukan laser lighting imersif, dan layanan sofa VIP
-            eksklusif.
+            Pusat hiburan malam spektakuler di Ponorogo, Jawa Timur. Rasakan dentuman tata suara
+            arena 50.000 Watt, pertunjukan laser moving beam berstandar konser, kurasi resident DJ
+            terbaik, serta kemewahan sofa privat dengan layanan VIP butler.
           </p>
         </Reveal>
 
         <Reveal direction="up" delay={450}>
           <div className={styles.actions}>
-            <ButtonLink href="/acara" variant="primary" size="lg" icon="arrow">
-              Jadwal Pesta Diskotik
-            </ButtonLink>
-            <ButtonLink href="/reservasi" variant="gold" size="lg" icon="crown">
+            <ButtonLink href="/reservasi" variant="primary" size="lg" icon="crown">
               Reservasi Meja VIP
+            </ButtonLink>
+            <ButtonLink href="/acara" variant="gold" size="lg" icon="arrow">
+              Jadwal Pesta &amp; DJ
             </ButtonLink>
           </div>
         </Reveal>
 
         <Reveal direction="up" delay={550}>
-          <div className={styles.highlights}>
-            <div className={styles.highlightItem}>
-              <Icon name="music" size={16} />
-              <span>Arena Sound System</span>
+          <div className={styles.statsRibbon}>
+            <div className={styles.statMetric}>
+              <span className={styles.statNumber}>50.000W</span>
+              <span className={styles.statLabel}>Sound Arena</span>
             </div>
-            <span className={styles.dot} />
-            <div className={styles.highlightItem}>
-              <Icon name="sparkle" size={16} />
-              <span>Laser &amp; Strobe Show</span>
+            <span className={styles.statDivider} />
+            <div className={styles.statMetric}>
+              <span className={styles.statNumber}>12+ VIP</span>
+              <span className={styles.statLabel}>Sofa Suites</span>
             </div>
-            <span className={styles.dot} />
-            <div className={styles.highlightItem}>
-              <Icon name="crown" size={16} />
-              <span>Dedicated Butler VIP</span>
+            <span className={styles.statDivider} />
+            <div className={styles.statMetric}>
+              <span className={styles.statNumber}>Top DJ</span>
+              <span className={styles.statLabel}>Resident &amp; Guest</span>
             </div>
-            <span className={styles.dot} />
-            <div className={styles.highlightItem}>
-              <Icon name="glass" size={16} />
-              <span>Artisan Cocktails &amp; Mocktails</span>
+            <span className={styles.statDivider} />
+            <div className={styles.statMetric}>
+              <span className={styles.statNumber}>18:00 - 03:00</span>
+              <span className={styles.statLabel}>Buka Tiap Malam</span>
             </div>
           </div>
         </Reveal>
