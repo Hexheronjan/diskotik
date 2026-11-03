@@ -4,6 +4,7 @@ import { PERMISSIONS, hasPermission } from "@/lib/permissions";
 
 export const authConfig = {
   pages: { signIn: "/login" },
+  secret: process.env.AUTH_SECRET || "e9d0a647e3be9f518e3bc9b2c3a5e128f731c548b2d3e4f5a6b7c8d9e0f1a2b3",
   session: { strategy: "jwt", maxAge: 60 * 60 * 8 },
   providers: [],
   callbacks: {

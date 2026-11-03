@@ -23,7 +23,7 @@ const ROLE_LABELS: Record<string, string> = {
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const session = await auth();
-  if (!session?.user || !hasPermission(session.user.role, PERMISSIONS.DASHBOARD_VIEW)) redirect("/masuk");
+  if (!session?.user || !hasPermission(session.user.role, PERMISSIONS.DASHBOARD_VIEW)) redirect("/login");
 
   return (
     <div className={styles.shell}>
