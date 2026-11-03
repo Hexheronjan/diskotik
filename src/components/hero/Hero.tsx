@@ -23,8 +23,7 @@ export function Hero({ siteName }: { siteName: string }) {
 
         <Reveal direction="left" delay={220}>
           <h1 id="judul-hero" className={styles.title}>
-            Diskotik &amp; VIP Lounge Paling Bergengsi di{" "}
-            <span className={styles.titleAccent}>{siteName} Ponorogo</span>.
+            Diskotik &amp; VIP Lounge Paling Bergengsi di {siteName} Ponorogo.
           </h1>
         </Reveal>
 

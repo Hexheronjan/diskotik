@@ -10,8 +10,8 @@ export function OpeningHours({ settings }: { settings: SiteSettings }) {
     <GlassPanel>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "var(--space-4)", flexWrap: "wrap", gap: "8px" }}>
         <h3 className={styles.subtitle} style={{ margin: 0 }}>Jam Operasional Klub</h3>
-        <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "0.75rem", fontWeight: 700, padding: "3px 10px", borderRadius: "999px", background: "rgba(0, 240, 255, 0.12)", color: "#00f0ff", border: "1px solid rgba(0, 240, 255, 0.3)" }}>
-          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#00f0ff", boxShadow: "0 0 8px #00f0ff" }} />
+        <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "0.75rem", fontWeight: 700, padding: "3px 10px", borderRadius: "999px", background: "rgba(255, 255, 255, 0.1)", color: "#ffffff", border: "1px solid rgba(255, 255, 255, 0.25)" }}>
+          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#ffffff", boxShadow: "0 0 8px #ffffff" }} />
           Buka Malam Ini
         </span>
       </div>
@@ -23,7 +23,7 @@ export function OpeningHours({ settings }: { settings: SiteSettings }) {
           {settings.openingHours.map((h) => (
             <li key={h.day}>
               <span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <Icon name="clock" size={14} style={{ color: "var(--color-gold)" }} />
+                <Icon name="clock" size={14} style={{ color: "#ffffff" }} />
                 <span>{h.day}</span>
               </span>
               <span style={{ color: "#fff", fontWeight: 600 }}>{h.hours}</span>
@@ -33,7 +33,7 @@ export function OpeningHours({ settings }: { settings: SiteSettings }) {
       )}
 
       <div style={{ marginTop: "var(--space-4)", paddingTop: "var(--space-3)", borderTop: "1px solid var(--color-border)", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "8px" }}>
-        <span style={{ fontSize: "0.8125rem", color: "var(--color-muted)" }}>Reservasi meja sofa disarankan sebelum pukul 21.00 WIB</span>
+        <span style={{ fontSize: "0.8125rem", color: "#ffffff", opacity: 0.9 }}>Reservasi meja sofa disarankan sebelum pukul 21.00 WIB</span>
         <a href="/reservasi" style={{ fontSize: "0.8125rem", fontWeight: 700, color: "var(--color-gold)", textDecoration: "none" }}>
           Pesan Meja Sekarang →
         </a>
@@ -59,7 +59,7 @@ export function Location({ settings }: { settings: SiteSettings }) {
           {/* Card 1: Alamat Venue Ponorogo */}
           <div className={styles.contactCard}>
             <div className={styles.contactLeft}>
-              <div className={styles.contactIconCircle} style={{ color: "#00f0ff", borderColor: "rgba(0, 240, 255, 0.3)" }}>
+              <div className={styles.contactIconCircle} style={{ color: "#ffffff", borderColor: "rgba(255, 255, 255, 0.25)" }}>
                 <Icon name="pin" size={24} />
               </div>
               <div className={styles.contactText}>
@@ -94,7 +94,7 @@ export function Location({ settings }: { settings: SiteSettings }) {
                 <Icon name="whatsapp" size={24} />
               </div>
               <div className={styles.contactText}>
-                <span className={styles.contactLabel} style={{ color: "#25D366" }}>
+                <span className={styles.contactLabel} style={{ color: "#ffffff" }}>
                   Hotline &amp; WhatsApp Resmi
                 </span>
                 <span className={styles.contactValue}>{displayPhone}</span>
@@ -124,7 +124,7 @@ export function Location({ settings }: { settings: SiteSettings }) {
               <div
                 className={styles.contactIconCircle}
                 style={{
-                  color: "#e0246a",
+                  color: "#ff659c",
                   borderColor: "rgba(224, 36, 114, 0.35)",
                   background: "rgba(224, 36, 114, 0.08)",
                 }}
@@ -132,7 +132,7 @@ export function Location({ settings }: { settings: SiteSettings }) {
                 <Icon name="instagram" size={24} />
               </div>
               <div className={styles.contactText}>
-                <span className={styles.contactLabel} style={{ color: "#e0246a" }}>
+                <span className={styles.contactLabel} style={{ color: "#ffffff" }}>
                   Instagram Resmi
                 </span>
                 <span className={styles.contactValue}>@prajalinks</span>

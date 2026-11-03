@@ -91,7 +91,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--color-muted);
+  color: #ffffff;
+  opacity: 0.92;
   font-size: 0.9rem;
 }
 
@@ -101,7 +102,8 @@
 }
 
 .desc {
-  color: var(--color-muted);
+  color: #ffffff;
+  opacity: 0.9;
   font-size: 0.9rem;
   line-height: 1.6;
 }
@@ -263,7 +265,8 @@
 }
 
 .featuredDesc {
-  color: var(--color-muted);
+  color: #ffffff;
+  opacity: 0.92;
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -399,16 +402,17 @@
   gap: 6px;
   padding: 4px 12px;
   border-radius: 999px;
-  background: rgba(0, 240, 255, 0.08);
-  border: 1px solid rgba(0, 240, 255, 0.28);
-  color: #00f0ff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
   font-size: 0.78rem;
   font-weight: 600;
 }
 
 .djBioSnippet {
   font-size: 0.875rem;
-  color: var(--color-muted);
+  color: #ffffff;
+  opacity: 0.9;
   line-height: 1.55;
   max-width: 32ch;
   margin: 2px 0;
