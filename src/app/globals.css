@@ -1,0 +1,242 @@
+/* Design tokens and base styles - Luxury Nightclub & Premium Lounge */
+
+:root {
+  /* Diskotik Nightclub Palette */
+  --color-bg: #09080e;
+  --color-section: #13101b;
+  --color-burgundy: #e0246a;
+  --color-burgundy-hover: #f7387f;
+  --color-gold: #c5a46d;
+  --color-gold-hover: #d4b580;
+  --color-cyan: #00f0ff;
+  --color-text: #f3f0eb;
+  --color-muted: #a9a3a1;
+
+  /* Derived Surface & Tint Variables */
+  --color-surface: rgba(19, 16, 27, 0.85);
+  --color-surface-card: #15121f;
+  --color-surface-hover: #1e192c;
+  --color-border: rgba(243, 240, 235, 0.08);
+  --color-border-subtle: rgba(243, 240, 235, 0.05);
+  --color-border-gold: rgba(197, 164, 109, 0.28);
+  --color-border-burgundy: rgba(224, 36, 114, 0.4);
+  --color-border-cyan: rgba(0, 240, 255, 0.3);
+
+  --color-success: #48bb78;
+  --color-warning: #ecc94b;
+  --color-error: #e53e3e;
+  --color-focus: #00f0ff;
+
+  /* Diskotik Night Shadows & Ambient Glows */
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 18px 45px rgba(0, 0, 0, 0.7);
+
+  /* Spacing Scale (4px / 8px grid) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Radii: Subtle & Tailored (Not overly rounded) */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --dur-fast: 160ms;
+  --dur-base: 240ms;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* Layout */
+  --container: 1240px;
+  --touch-min: 44px;
+  --nav-height: 76px;
+
+  /* Modern, Clean & Professional Typography */
+  --font-family: var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --text-h1: clamp(2.4rem, 1.8rem + 2.8vw, 4.2rem);
+  --text-h2: clamp(1.6rem, 1.3rem + 1.4vw, 2.5rem);
+  --text-h3: clamp(1.2rem, 1.1rem + 0.4vw, 1.45rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + 16px);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100dvh;
+  background-color: var(--color-bg);
+}
+
+/* Headings: Elegant, Modern, and Natural */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: var(--text-h1);
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: var(--text-h2);
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--text-h3);
+  letter-spacing: -0.015em;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img,
+svg,
+iframe {
+  max-width: 100%;
+}
+
+a {
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+a:hover {
+  color: #fff;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Accessible focus outline */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+::selection {
+  background: var(--color-burgundy);
+  color: #fff;
+}
+
+.container {
+  width: min(var(--container), 100% - 2 * var(--space-6));
+  margin-inline: auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: -100px;
+  z-index: 200;
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-section);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: min(var(--container), 100% - 2 * var(--space-4));
+  }
+  :root {
+    --nav-height: 68px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

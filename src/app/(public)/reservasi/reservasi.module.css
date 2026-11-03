@@ -1,0 +1,407 @@
+/* Modern VIP Reservation Module */
+
+.container {
+  width: min(var(--container), 100% - 2 * var(--space-6));
+  margin-inline: auto;
+  padding-bottom: var(--space-20);
+}
+
+.header {
+  padding: var(--space-16) 0 var(--space-8);
+  max-width: 820px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.formCard {
+  background: var(--color-surface-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  padding: var(--space-8);
+}
+
+.formTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: var(--space-2);
+}
+
+.formSubtitle {
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+  margin-bottom: var(--space-6);
+  line-height: 1.6;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.required {
+  color: #e0246a;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(14, 11, 20, 0.9);
+  border: 1px solid var(--color-border);
+  color: #fff;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #00f0ff;
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+  background: rgba(22, 18, 32, 0.95);
+}
+
+.textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.errorText {
+  color: #fc8181;
+  font-size: 0.8125rem;
+  margin-top: 2px;
+}
+
+.globalError {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: rgba(229, 62, 62, 0.15);
+  border: 1px solid rgba(229, 62, 62, 0.4);
+  color: #fc8181;
+  font-size: 0.9rem;
+}
+
+/* Package Radio Cards Grid */
+.packagesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-top: 4px;
+}
+
+.packageOption {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.packageOption:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+.packageSelected {
+  background: rgba(0, 240, 255, 0.08) !important;
+  border-color: #00f0ff !important;
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.2);
+}
+
+.packageName {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.packageMeta {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin-top: 2px;
+}
+
+.packagePrice {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  margin-top: 4px;
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 48px;
+  padding: 0 var(--space-6);
+  border-radius: var(--radius-sm);
+  border: none;
+  background: linear-gradient(90deg, #e0246a, #c5a46d);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 18px rgba(224, 36, 114, 0.4);
+  margin-top: var(--space-2);
+}
+
+.submitBtn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(224, 36, 114, 0.55);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Success Confirmation Screen */
+.successCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-8) var(--space-6);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-card);
+  border: 1px solid rgba(0, 240, 255, 0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 240, 255, 0.2);
+  gap: var(--space-4);
+}
+
+.successIconCircle {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(72, 187, 120, 0.18);
+  border: 2px solid #48bb78;
+  color: #48bb78;
+  box-shadow: 0 0 20px rgba(72, 187, 120, 0.4);
+}
+
+.successTitle {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.codeBanner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-md);
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px dashed #00f0ff;
+  gap: 4px;
+}
+
+.codeLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #00f0ff;
+  font-weight: 700;
+}
+
+.codeValue {
+  font-family: var(--font-orbitron), monospace;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.06em;
+}
+
+.summaryBox {
+  width: 100%;
+  max-width: 460px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  padding: var(--space-4);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: 6px;
+}
+
+.summaryRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.summaryKey {
+  color: var(--color-muted);
+}
+
+.summaryVal {
+  color: #fff;
+  font-weight: 600;
+}
+
+.whatsappConfirmBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-sm);
+  background: #25d366;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+  transition: all 0.2s ease;
+  width: 100%;
+  max-width: 460px;
+}
+
+.whatsappConfirmBtn:hover {
+  background: #22bf5b;
+  transform: translateY(-2px);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+}
+
+/* Sidebar VIP Concierge Perks */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.perksCard {
+  background: var(--color-surface-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.perksTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.perksList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.perkItem {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+.perkItem svg {
+  color: #00f0ff;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.perkItem strong {
+  color: #fff;
+}
+
+.hotlineBox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border-radius: var(--radius-sm);
+  background: rgba(224, 36, 114, 0.1);
+  border: 1px solid rgba(224, 36, 114, 0.3);
+}
+
+.hotlineTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #e0246a;
+}
+
+.hotlinePhone {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .packagesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575px) {
+  .row2 {
+    grid-template-columns: 1fr;
+  }
+  .formCard {
+    padding: var(--space-5);
+  }
+}

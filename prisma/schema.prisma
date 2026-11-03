@@ -1,0 +1,390 @@
+// Prisma schema for the nightclub website. The full schema is created in Stage 1 so later stages only add code.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// ===== ENUMS =====
+
+enum EventStatus {
+  UPCOMING
+  ONGOING
+  COMPLETED
+}
+
+enum ReservationStatus {
+  PENDING
+  CONFIRMED
+  REJECTED
+  CANCELLED
+  COMPLETED
+}
+
+enum TicketStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  USED
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+}
+
+// ===== ACCESS CONTROL =====
+
+// Stage 1: used (staff login, role checks, seed).
+model Role {
+  id          Int              @id @default(autoincrement())
+  name        String           @unique @db.VarChar(50)
+  description String?          @db.VarChar(255)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  users       User[]
+  permissions RolePermission[]
+}
+
+// Stage 1: used (seeded and checked by src/lib/permissions.ts).
+model Permission {
+  id          Int              @id @default(autoincrement())
+  code        String           @unique @db.VarChar(80)
+  description String?          @db.VarChar(255)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  roles       RolePermission[]
+}
+
+// Stage 1: used (join table between Role and Permission).
+model RolePermission {
+  id           Int        @id @default(autoincrement())
+  roleId       Int
+  permissionId Int
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  role         Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@unique([roleId, permissionId])
+  @@index([permissionId])
+}
+
+// Stage 1: used (admin login). Customers are not users; they have no accounts.
+model User {
+  id                Int             @id @default(autoincrement())
+  name              String          @db.VarChar(120)
+  email             String          @unique @db.VarChar(190)
+  passwordHash      String          @db.VarChar(255)
+  isActive          Boolean         @default(true)
+  roleId            Int
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+  role              Role            @relation(fields: [roleId], references: [id])
+  activityLogs      ActivityLog[]
+  verifications     TicketVerification[]
+  handledReservations Reservation[] @relation("ReservationHandler")
+
+  @@index([roleId])
+}
+
+// ===== EVENTS & DJS =====
+
+// Stage 1: used (public /acara pages and dashboard counts).
+model Event {
+  id          Int              @id @default(autoincrement())
+  slug        String           @unique @db.VarChar(160)
+  title       String           @db.VarChar(200)
+  description String           @db.Text
+  posterUrl   String?          @db.VarChar(500)
+  startsAt    DateTime
+  endsAt      DateTime?
+  status      EventStatus      @default(UPCOMING)
+  guestStars  String?          @db.VarChar(255)
+  isPublished Boolean          @default(true)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  djs         EventDj[]
+  tickets     TicketCategory[]
+  bookings    TicketBooking[]
+  promotions  Promotion[]
+
+  @@index([status, startsAt])
+  @@index([isPublished])
+}
+
+// Stage 1: used (public /dj pages).
+model Dj {
+  id          Int        @id @default(autoincrement())
+  slug        String     @unique @db.VarChar(160)
+  name        String     @db.VarChar(120)
+  biography   String     @db.Text
+  genre       String     @db.VarChar(120)
+  photoUrl    String?    @db.VarChar(500)
+  instagram   String?    @db.VarChar(255)
+  spotify     String?    @db.VarChar(255)
+  youtube     String?    @db.VarChar(255)
+  isActive    Boolean    @default(true)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  events      EventDj[]
+
+  @@index([isActive])
+}
+
+// Stage 1: used (event lineup join table).
+model EventDj {
+  id         Int      @id @default(autoincrement())
+  eventId    Int
+  djId       Int
+  sortOrder  Int      @default(0)
+  slotLabel  String?  @db.VarChar(80)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  event      Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  dj         Dj       @relation(fields: [djId], references: [id], onDelete: Cascade)
+
+  @@unique([eventId, djId])
+  @@index([djId])
+}
+
+// ===== GALLERY =====
+
+// Stage 1: not used yet (gallery management comes in a later stage).
+model GalleryCategory {
+  id        Int       @id @default(autoincrement())
+  name      String    @db.VarChar(120)
+  slug      String    @unique @db.VarChar(160)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  items     Gallery[]
+}
+
+// Stage 1: not used yet (the about page shows an empty state until a later stage).
+model Gallery {
+  id          Int             @id @default(autoincrement())
+  categoryId  Int?
+  title       String          @db.VarChar(160)
+  imageUrl    String          @db.VarChar(500)
+  isPublished Boolean         @default(true)
+  sortOrder   Int             @default(0)
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  category    GalleryCategory? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+
+  @@index([categoryId])
+  @@index([isPublished, sortOrder])
+}
+
+// ===== MENU =====
+
+// Stage 1: used (public /menu page).
+model MenuCategory {
+  id        Int        @id @default(autoincrement())
+  name      String     @db.VarChar(120)
+  slug      String     @unique @db.VarChar(160)
+  sortOrder Int        @default(0)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  items     MenuItem[]
+}
+
+// Stage 1: used (public /menu page, dashboard count of active items).
+model MenuItem {
+  id          Int          @id @default(autoincrement())
+  categoryId  Int
+  name        String       @db.VarChar(160)
+  description String?      @db.VarChar(500)
+  price       Int
+  photoUrl    String?      @db.VarChar(500)
+  isAvailable Boolean      @default(true)
+  isActive    Boolean      @default(true)
+  sortOrder   Int          @default(0)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  category    MenuCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@index([categoryId, sortOrder])
+  @@index([isActive, isAvailable])
+}
+
+// ===== VIP =====
+
+// Stage 1: used (public /vip page).
+model VipPackage {
+  id          Int        @id @default(autoincrement())
+  slug        String     @unique @db.VarChar(160)
+  name        String     @db.VarChar(160)
+  description String     @db.Text
+  facilities  Json
+  maxCapacity Int
+  price       Int
+  photoUrl    String?    @db.VarChar(500)
+  isAvailable Boolean    @default(true)
+  sortOrder   Int        @default(0)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  tables      VipTable[]
+
+  @@index([isAvailable, sortOrder])
+}
+
+// Stage 1: not used yet (table inventory is managed with reservations in a later stage).
+model VipTable {
+  id           Int           @id @default(autoincrement())
+  packageId    Int
+  code         String        @unique @db.VarChar(40)
+  seats        Int
+  isActive     Boolean       @default(true)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  package      VipPackage    @relation(fields: [packageId], references: [id], onDelete: Cascade)
+  reservations Reservation[]
+
+  @@index([packageId])
+}
+
+// ===== RESERVATIONS =====
+
+// Stage 1: not used yet (only counted on the dashboard); reservation flow comes in a later stage.
+model Reservation {
+  id            Int               @id @default(autoincrement())
+  code          String            @unique @db.VarChar(40)
+  tableId       Int?
+  handledById   Int?
+  customerName  String            @db.VarChar(120)
+  customerPhone String            @db.VarChar(40)
+  customerEmail String?           @db.VarChar(190)
+  guestCount    Int
+  reservedFor   DateTime
+  notes         String?           @db.VarChar(500)
+  status        ReservationStatus @default(PENDING)
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+  table         VipTable?         @relation(fields: [tableId], references: [id], onDelete: SetNull)
+  handledBy     User?             @relation("ReservationHandler", fields: [handledById], references: [id], onDelete: SetNull)
+
+  @@index([status, reservedFor])
+  @@index([tableId])
+  @@index([handledById])
+}
+
+// ===== TICKETING =====
+
+// Stage 1: ticket prices are shown on event detail pages (display only); selling comes in a later stage.
+model TicketCategory {
+  id        Int             @id @default(autoincrement())
+  eventId   Int
+  name      String          @db.VarChar(120)
+  price     Int
+  quota     Int
+  isActive  Boolean         @default(true)
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+  event     Event           @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  bookings  TicketBooking[]
+
+  @@index([eventId])
+}
+
+// Stage 1: not used yet (only counted on the dashboard); booking flow comes in a later stage.
+model TicketBooking {
+  id            Int            @id @default(autoincrement())
+  code          String         @unique @db.VarChar(40)
+  eventId       Int
+  categoryId    Int
+  customerName  String         @db.VarChar(120)
+  customerPhone String         @db.VarChar(40)
+  customerEmail String?        @db.VarChar(190)
+  quantity      Int
+  totalPrice    Int
+  status        BookingStatus  @default(PENDING)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  event         Event          @relation(fields: [eventId], references: [id])
+  category      TicketCategory @relation(fields: [categoryId], references: [id])
+  tickets       Ticket[]
+
+  @@index([eventId, status])
+  @@index([categoryId])
+}
+
+// Stage 1: not used yet (individual tickets with QR codes come in a later stage).
+model Ticket {
+  id            Int                  @id @default(autoincrement())
+  bookingId     Int
+  code          String               @unique @db.VarChar(64)
+  status        TicketStatus         @default(PENDING)
+  createdAt     DateTime             @default(now())
+  updatedAt     DateTime             @updatedAt
+  booking       TicketBooking        @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  verifications TicketVerification[]
+
+  @@index([bookingId])
+  @@index([status])
+}
+
+// Stage 1: not used yet (door check-in log is built in a later stage).
+model TicketVerification {
+  id         Int      @id @default(autoincrement())
+  ticketId   Int
+  staffId    Int?
+  result     String   @db.VarChar(40)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  ticket     Ticket   @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  staff      User?    @relation(fields: [staffId], references: [id], onDelete: SetNull)
+
+  @@index([ticketId])
+  @@index([staffId])
+}
+
+// ===== MARKETING & SETTINGS =====
+
+// Stage 1: not used yet (promotions are built in a later stage).
+model Promotion {
+  id          Int       @id @default(autoincrement())
+  eventId     Int?
+  title       String    @db.VarChar(200)
+  description String    @db.Text
+  imageUrl    String?   @db.VarChar(500)
+  startsAt    DateTime
+  endsAt      DateTime
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  event       Event?    @relation(fields: [eventId], references: [id], onDelete: SetNull)
+
+  @@index([isActive, startsAt, endsAt])
+  @@index([eventId])
+}
+
+// Stage 1: used (name, WhatsApp, address, hours, social links, map on public pages).
+model WebsiteSetting {
+  id        Int      @id @default(autoincrement())
+  key       String   @unique @db.VarChar(80)
+  value     String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Stage 1: used (dashboard shows recent entries; login/logout write entries).
+model ActivityLog {
+  id         Int      @id @default(autoincrement())
+  userId     Int?
+  action     String   @db.VarChar(80)
+  entity     String?  @db.VarChar(80)
+  entityId   String?  @db.VarChar(64)
+  detail     String?  @db.VarChar(500)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  user       User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([createdAt])
+  @@index([userId])
+}

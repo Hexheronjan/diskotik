@@ -1,0 +1,521 @@
+.section {
+  padding: var(--space-20) 0 0;
+}
+
+.pageSection {
+  padding: var(--space-16) 0 0;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  color: var(--color-muted);
+  max-width: 68ch;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #fff;
+  margin-bottom: var(--space-4);
+}
+
+.hours {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hours li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hours li:last-child {
+  border-bottom: none;
+}
+
+.hours span:first-child {
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+}
+
+.hours span:last-child {
+  font-weight: 600;
+  color: #fff;
+  text-align: right;
+  font-size: 0.9375rem;
+}
+
+.map {
+  width: 100%;
+  min-height: 360px;
+  height: 100%;
+  border: 0;
+  border-radius: var(--radius-sm);
+  filter: saturate(0.7) contrast(1.1) brightness(0.85);
+}
+
+.mapWrap {
+  padding: var(--space-2);
+  overflow: hidden;
+  background: var(--color-section);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+/* Unique Diskotik Venue & Contact Hub */
+.venueHub {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: var(--space-8);
+  align-items: stretch;
+}
+
+.contactCardsStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.contactCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contactCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 240, 255, 0.4);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.55), 0 0 16px rgba(224, 36, 114, 0.12);
+}
+
+.contactLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex: 1;
+}
+
+.contactIconCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.contactText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contactLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #00f0ff;
+}
+
+.contactValue {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.contactSubtext {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.contactBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(197, 164, 109, 0.14);
+  border: 1px solid var(--color-border-gold);
+  color: var(--color-gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.contactBtn:hover {
+  background: var(--color-gold);
+  color: #09080e;
+  transform: translateX(2px);
+}
+
+.venueGuidelines {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: rgba(22, 18, 29, 0.7);
+  border: 1px solid var(--color-border-subtle);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+/* Framed Modern Ponorogo Map */
+.mapCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-card);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.mapCard:hover {
+  border-color: rgba(0, 240, 255, 0.5);
+}
+
+.mapHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: rgba(18, 15, 24, 0.95);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mapCityTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.mapLiveDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #00f0ff;
+  box-shadow: 0 0 10px #00f0ff;
+}
+
+.mapHoursTag {
+  font-size: 0.8rem;
+  color: var(--color-gold);
+  font-weight: 500;
+}
+
+.mapIframeWrap {
+  position: relative;
+  flex: 1;
+  min-height: 380px;
+}
+
+.mapIframe {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  border: 0;
+  display: block;
+  filter: saturate(0.85) contrast(1.1) brightness(0.9);
+}
+
+.mapFooterOverlay {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  background: rgba(14, 11, 20, 0.96);
+  border-top: 1px solid var(--color-border);
+}
+
+.mapFooterText {
+  font-size: 0.825rem;
+  color: var(--color-muted);
+}
+
+.mapNavBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+.mapNavBtn:hover {
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .venueHub {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  .contactCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contactBtn {
+    align-self: flex-start;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.address {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.address svg {
+  flex-shrink: 0;
+  color: var(--color-gold);
+  margin-top: 4px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-xs);
+  background: rgba(197, 164, 109, 0.08);
+  border: 1px solid var(--color-border-gold);
+  font-size: 0.9375rem;
+  color: var(--color-text);
+}
+
+.pageHeader {
+  padding: var(--space-16) 0 0;
+}
+
+.facts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.fact {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+}
+
+.fact svg {
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.fact strong {
+  color: #fff;
+}
+
+.poster {
+  max-width: 500px;
+}
+
+.links {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-2);
+}
+
+.back {
+  margin-bottom: var(--space-6);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+}
+
+.back:hover {
+  color: #fff;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.priceRow:last-child {
+  border-bottom: none;
+}
+
+.priceRow strong {
+  color: var(--color-gold);
+  font-size: 1.15rem;
+}
+
+.lineup {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.lineupItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-card);
+  color: var(--color-text);
+  min-height: var(--touch-min);
+  transition: all var(--dur-fast) var(--ease);
+}
+
+.lineupItem:hover {
+  border-color: var(--color-border-gold);
+  background: var(--color-surface-hover);
+  text-decoration: none;
+  transform: translateX(4px);
+}
+
+.lineupThumb {
+  flex: 0 0 54px;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+}
+
+.muted {
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+/* Luxury VIP Banner Card */
+.cta {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+  padding: var(--space-8) var(--space-4);
+}
+
+.ctaBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(197, 164, 109, 0.12);
+  border: 1px solid var(--color-border-gold);
+  color: var(--color-gold);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.ctaTitle {
+  font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.3rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.025em;
+}
+
+.ctaText {
+  max-width: 52ch;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 1199px) {
+  .grid3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 899px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .grid3,
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+  .section,
+  .pageSection {
+    padding-top: var(--space-12);
+  }
+}

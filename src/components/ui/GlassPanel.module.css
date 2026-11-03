@@ -1,0 +1,22 @@
+/* Luxury GlassPanel with subtle border and solid background support */
+.panel {
+  position: relative;
+  background: var(--color-section);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.panel::before {
+  display: none;
+}
+
+.padded {
+  padding: var(--space-8);
+}
+
+@media (max-width: 767px) {
+  .padded {
+    padding: var(--space-5);
+  }
+}
