@@ -188,9 +188,9 @@
   gap: 8px;
   padding: 5px 14px;
   border-radius: var(--radius-pill);
-  background: rgba(0, 240, 255, 0.12);
-  border: 1px solid rgba(0, 240, 255, 0.35);
-  color: #00f0ff;
+  background: rgba(197, 164, 109, 0.12);
+  border: 1px solid rgba(197, 164, 109, 0.35);
+  color: #c5a46d;
   font-size: 0.8125rem;
   font-weight: 700;
 }
@@ -199,8 +199,8 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #00f0ff;
-  box-shadow: 0 0 10px #00f0ff;
+  background: #c5a46d;
+  box-shadow: 0 0 10px #c5a46d;
   animation: pulseDotAnim 1.2s infinite alternate;
 }
 
@@ -404,7 +404,7 @@
 
 .contactCard:hover {
   transform: translateY(-3px);
-  border-color: rgba(0, 240, 255, 0.4);
+  border-color: rgba(197, 164, 109, 0.4);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.55), 0 0 16px rgba(224, 36, 114, 0.12);
 }
 
@@ -497,14 +497,14 @@
   height: 100%;
   border-radius: var(--radius-md);
   background: var(--color-surface-card);
-  border: 1px solid rgba(0, 240, 255, 0.25);
+  border: 1px solid rgba(197, 164, 109, 0.25);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
   overflow: hidden;
   transition: border-color 0.3s ease;
 }
 
 .mapCard:hover {
-  border-color: rgba(0, 240, 255, 0.5);
+  border-color: rgba(197, 164, 109, 0.5);
 }
 
 .mapHeader {
@@ -530,8 +530,8 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background-color: #00f0ff;
-  box-shadow: 0 0 10px #00f0ff;
+  background-color: #c5a46d;
+  box-shadow: 0 0 10px #c5a46d;
 }
 
 .mapHoursTag {

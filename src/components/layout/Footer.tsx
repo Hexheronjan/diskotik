@@ -67,7 +67,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
           {settings.address ? <p className={styles.muted}>{settings.address}</p> : null}
           <p className={styles.muted} style={{ marginTop: "6px", fontSize: "0.875rem" }}>
             WhatsApp:{" "}
-            <a href={settings.whatsappLink || "https://wa.me/6285151951806"} style={{ color: "#00f0ff", fontWeight: 600 }}>
+            <a href={settings.whatsappLink || "https://wa.me/6285151951806"} style={{ color: "#c5a46d", fontWeight: 600 }}>
               0851-5195-1806
             </a>
           </p>
@@ -77,7 +77,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
               href="https://instagram.com/prajalinks"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#ff659c", fontWeight: 600 }}
+              style={{ color: "#c5a46d", fontWeight: 600 }}
             >
               @prajalinks
             </a>
@@ -88,6 +88,9 @@ export function Footer({ settings }: { settings: SiteSettings }) {
       <div className={`container ${styles.bottom}`}>
         <p>© {settings.siteName}. Seluruh hak cipta dilindungi.</p>
         <Link href="/masuk" className={styles.footLink}>Masuk Staf</Link>
+      </div>
+      <div className={styles.wordmark} aria-hidden="true">
+        {settings.siteName}
       </div>
     </footer>
   );

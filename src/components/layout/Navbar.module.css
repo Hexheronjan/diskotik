@@ -35,9 +35,9 @@
   width: 36px;
   height: 36px;
   border-radius: var(--radius-xs);
-  background: linear-gradient(135deg, rgba(224, 36, 114, 0.22), rgba(0, 240, 255, 0.22));
-  border: 1px solid rgba(0, 240, 255, 0.35);
-  box-shadow: 0 0 14px rgba(224, 36, 114, 0.2);
+  background: rgba(197, 164, 109, 0.1);
+  border: 1px solid rgba(197, 164, 109, 0.55);
+  box-shadow: inset 0 0 0 3px rgba(17, 17, 19, 0.9);
 }
 
 .brandEqualizer {
@@ -51,7 +51,7 @@
   width: 3px;
   height: 100%;
   border-radius: 1px;
-  background: linear-gradient(180deg, #00f0ff, #e0246a);
+  background: var(--color-gold);
   animation: navEqAnim 0.8s ease-in-out infinite alternate;
 }
 
@@ -65,12 +65,12 @@
 }
 
 .brandText {
-  font-family: var(--font-orbitron), var(--font-poppins), sans-serif;
-  font-weight: 800;
-  font-size: 1.22rem;
-  letter-spacing: 0.02em;
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
   color: #fff;
-  text-shadow: 0 0 16px rgba(255, 255, 255, 0.2);
 }
 
 .links {

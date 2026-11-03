@@ -87,7 +87,7 @@ export function ReservationForm({ packages, defaultPackageSlug }: ReservationFor
           ) : null}
           <div className={styles.summaryRow}>
             <span className={styles.summaryKey}>Status Meja:</span>
-            <span className={styles.summaryVal} style={{ color: "#00f0ff" }}>
+            <span className={styles.summaryVal} style={{ color: "#c5a46d" }}>
               Menunggu Verifikasi Staf
             </span>
           </div>

@@ -2,18 +2,19 @@ import { Hero } from "@/components/hero/Hero";
 import { DjCard, EventCard, FeaturedEventCard, VipCard } from "@/components/public/Cards";
 import { Location, OpeningHours } from "@/components/public/Sections";
 import { ButtonLink } from "@/components/ui/Button";
-import { GlassPanel } from "@/components/ui/GlassPanel";
+import { CtaBanner, GalleryMosaic, Marquee, StatsBand } from "@/components/home/Sections";
 import { Reveal } from "@/components/ui/Reveal";
 import { EmptyState, SectionHeading } from "@/components/ui/SectionHeading";
-import { getDjs, getSettings, getUpcomingPreview, getVipPackages } from "@/lib/queries";
+import { getDjs, getSettings, getUpcomingPreview, getGalleryPreview, getVipPackages } from "@/lib/queries";
 import styles from "@/components/public/Page.module.css";
 
 export default async function HomePage() {
-  const [settings, events, djs, vipPackages] = await Promise.all([
+  const [settings, events, djs, vipPackages, gallery] = await Promise.all([
     getSettings(),
     getUpcomingPreview(3),
     getDjs(3),
     getVipPackages(),
+    getGalleryPreview(),
   ]);
 
   const [headliner, ...otherEvents] = events;
@@ -21,9 +22,10 @@ export default async function HomePage() {
   return (
     <>
       <Hero siteName={settings.siteName} />
+      <Marquee />
 
       {/* Section: The Signature Diskotik Experience */}
-      <section className={`container ${styles.section}`} aria-labelledby="tentang-singkat">
+      <section id="pengalaman" className={`container ${styles.section}`} aria-labelledby="tentang-singkat">
         <Reveal direction="up" delay={80}>
           <div className={styles.experienceHeader}>
             <div className={styles.eyebrowBadge}>
@@ -126,6 +128,8 @@ export default async function HomePage() {
           </div>
         </Reveal>
       </section>
+
+      <StatsBand />
 
       {/* Section: Jadwal Pesta Diskotik / Acara Spektakuler Mendatang */}
       <section className={`container ${styles.section}`} aria-labelledby="acara-mendatang">
@@ -233,25 +237,23 @@ export default async function HomePage() {
         </section>
       ) : null}
 
-      {/* Section: VIP Lounge CTA Banner */}
+      {/* Section: Galeri Suasana */}
+      {gallery.length > 0 ? (
+        <section className={`container ${styles.section}`}>
+          <Reveal direction="up" delay={50}>
+            <SectionHeading
+              eyebrow="Galeri Suasana"
+              title="Malam di Prajalinks"
+              description="Sekilas suasana lantai dansa, lounge VIP, dan bar kami di jantung kota Ponorogo."
+            />
+          </Reveal>
+          <GalleryMosaic items={gallery} />
+        </section>
+      ) : null}
+
+      {/* Section: Cinematic VIP CTA */}
       <section className={`container ${styles.section}`}>
-        <Reveal direction="up" delay={150}>
-          <GlassPanel>
-            <div className={styles.cta}>
-              <div className={styles.ctaBadge}>
-                <span>VIP &amp; VVIP Experience</span>
-              </div>
-              <h2 className={styles.ctaTitle}>Kemewahan Sofa VIP di Tengah Euforia Diskotik Ponorogo</h2>
-              <p className={styles.ctaText}>
-                Nikmati kenyamanan meja sofa privat dengan pemandangan terbaik ke panggung DJ, botol minuman premium pendamping,
-                dan layanan butler pribadi eksklusif untuk malam istimewa Anda.
-              </p>
-              <ButtonLink href="/reservasi" variant="primary" size="lg" icon="crown">
-                Reservasi Meja VIP Sekarang
-              </ButtonLink>
-            </div>
-          </GlassPanel>
-        </Reveal>
+        <CtaBanner />
       </section>
 
       {/* Section: Kunjungi Diskotik Kami (Strictly Maps, WA, IG) */}

@@ -1,4 +1,4 @@
-// High-energy Diskotik & Premium Nightclub Hero section with smooth slide animations.
+// Premium nightclub hero: cinematic slideshow, minimal composition, clear CTAs.
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { HeroBackdrop } from "./HeroBackdrop";
@@ -12,7 +12,7 @@ export function Hero({ siteName }: { siteName: string }) {
         <Reveal direction="left" delay={100}>
           <div className={styles.pretitle}>
             <span className={styles.pulseDot} />
-            <span className={styles.eyebrow}>Live Tonight • High-Energy Diskotik &amp; VIP Club</span>
+            <span className={styles.eyebrow}>Live Tonight • Diskotik &amp; VIP Lounge</span>
             <span className={styles.equalizerMini} aria-hidden="true">
               <span className={styles.eqBar} style={{ animationDelay: "0s" }} />
               <span className={styles.eqBar} style={{ animationDelay: "0.2s" }} />
@@ -46,28 +46,11 @@ export function Hero({ siteName }: { siteName: string }) {
           </div>
         </Reveal>
 
-        <Reveal direction="up" delay={550}>
-          <div className={styles.statsRibbon}>
-            <div className={styles.statMetric}>
-              <span className={styles.statNumber}>50.000W</span>
-              <span className={styles.statLabel}>Sound Arena</span>
-            </div>
-            <span className={styles.statDivider} />
-            <div className={styles.statMetric}>
-              <span className={styles.statNumber}>12+ VIP</span>
-              <span className={styles.statLabel}>Sofa Suites</span>
-            </div>
-            <span className={styles.statDivider} />
-            <div className={styles.statMetric}>
-              <span className={styles.statNumber}>Top DJ</span>
-              <span className={styles.statLabel}>Resident &amp; Guest</span>
-            </div>
-            <span className={styles.statDivider} />
-            <div className={styles.statMetric}>
-              <span className={styles.statNumber}>18:00 - 03:00</span>
-              <span className={styles.statLabel}>Buka Tiap Malam</span>
-            </div>
-          </div>
+        <Reveal direction="up" delay={600}>
+          <a href="#pengalaman" className={styles.scrollCue} aria-label="Gulir ke bawah">
+            <span>Jelajahi</span>
+            <span className={styles.scrollLine} />
+          </a>
         </Reveal>
       </div>
     </section>

@@ -22,17 +22,15 @@
 }
 
 .eyebrowDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ffffff;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  width: 32px;
+  height: 1px;
+  background: var(--color-gold);
 }
 
 .eyebrow {
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: #ffffff;
 }

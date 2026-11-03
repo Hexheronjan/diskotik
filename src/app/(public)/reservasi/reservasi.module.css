@@ -21,7 +21,7 @@
 .formCard {
   background: var(--color-surface-card);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(0, 240, 255, 0.25);
+  border: 1px solid rgba(197, 164, 109, 0.25);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
   padding: var(--space-8);
 }
@@ -87,8 +87,8 @@
 .select:focus,
 .textarea:focus {
   outline: none;
-  border-color: #00f0ff;
-  box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+  border-color: #c5a46d;
+  box-shadow: 0 0 12px rgba(197, 164, 109, 0.25);
   background: rgba(22, 18, 32, 0.95);
 }
 
@@ -134,13 +134,13 @@
 
 .packageOption:hover {
   background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(0, 240, 255, 0.3);
+  border-color: rgba(197, 164, 109, 0.3);
 }
 
 .packageSelected {
-  background: rgba(0, 240, 255, 0.08) !important;
-  border-color: #00f0ff !important;
-  box-shadow: 0 0 14px rgba(0, 240, 255, 0.2);
+  background: rgba(197, 164, 109, 0.08) !important;
+  border-color: #c5a46d !important;
+  box-shadow: 0 0 14px rgba(197, 164, 109, 0.2);
 }
 
 .packageName {
@@ -202,8 +202,8 @@
   padding: var(--space-8) var(--space-6);
   border-radius: var(--radius-lg);
   background: var(--color-surface-card);
-  border: 1px solid rgba(0, 240, 255, 0.5);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 240, 255, 0.2);
+  border: 1px solid rgba(197, 164, 109, 0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(197, 164, 109, 0.2);
   gap: var(--space-4);
 }
 
@@ -231,8 +231,8 @@
   align-items: center;
   padding: var(--space-4) var(--space-6);
   border-radius: var(--radius-md);
-  background: rgba(0, 240, 255, 0.08);
-  border: 1px dashed #00f0ff;
+  background: rgba(197, 164, 109, 0.08);
+  border: 1px dashed #c5a46d;
   gap: 4px;
 }
 
@@ -240,7 +240,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #00f0ff;
+  color: #c5a46d;
   font-weight: 700;
 }
 
@@ -355,7 +355,7 @@
 }
 
 .perkItem svg {
-  color: #00f0ff;
+  color: #c5a46d;
   flex-shrink: 0;
   margin-top: 3px;
 }
