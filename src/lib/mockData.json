@@ -1,0 +1,905 @@
+{
+  "settings": [
+    {
+      "id": 1,
+      "key": "site_name",
+      "value": "Prajalinks",
+      "createdAt": "2026-11-03T06:11:24.102Z",
+      "updatedAt": "2026-11-03T07:32:26.230Z"
+    },
+    {
+      "id": 2,
+      "key": "whatsapp_number",
+      "value": "6285151951806",
+      "createdAt": "2026-11-03T06:11:24.108Z",
+      "updatedAt": "2026-11-03T07:32:26.234Z"
+    },
+    {
+      "id": 3,
+      "key": "address",
+      "value": "Jl. HOS Cokroaminoto No. 88, Ponorogo, Jawa Timur 63411",
+      "createdAt": "2026-11-03T06:11:24.112Z",
+      "updatedAt": "2026-11-03T07:32:26.238Z"
+    },
+    {
+      "id": 4,
+      "key": "opening_hours",
+      "value": "[{\"day\":\"Senin - Kamis\",\"hours\":\"18.00 - 01.00 WIB\"},{\"day\":\"Jumat - Sabtu\",\"hours\":\"19.00 - 03.00 WIB\"},{\"day\":\"Minggu\",\"hours\":\"18.00 - 00.00 WIB\"}]",
+      "createdAt": "2026-11-03T06:11:24.119Z",
+      "updatedAt": "2026-11-03T07:32:26.240Z"
+    },
+    {
+      "id": 5,
+      "key": "instagram_url",
+      "value": "https://instagram.com/prajalinks",
+      "createdAt": "2026-11-03T06:11:24.123Z",
+      "updatedAt": "2026-11-03T07:32:26.243Z"
+    },
+    {
+      "id": 6,
+      "key": "facebook_url",
+      "value": "",
+      "createdAt": "2026-11-03T06:11:24.128Z",
+      "updatedAt": "2026-11-03T07:32:26.245Z"
+    },
+    {
+      "id": 7,
+      "key": "tiktok_url",
+      "value": "",
+      "createdAt": "2026-11-03T06:11:24.131Z",
+      "updatedAt": "2026-11-03T07:32:26.247Z"
+    },
+    {
+      "id": 8,
+      "key": "youtube_url",
+      "value": "",
+      "createdAt": "2026-11-03T06:11:24.135Z",
+      "updatedAt": "2026-11-03T07:32:26.249Z"
+    },
+    {
+      "id": 9,
+      "key": "maps_embed_url",
+      "value": "https://www.google.com/maps?q=Ponorogo,+Jawa+Timur,+Indonesia&output=embed",
+      "createdAt": "2026-11-03T06:11:24.139Z",
+      "updatedAt": "2026-11-03T07:32:26.251Z"
+    },
+    {
+      "id": 10,
+      "key": "about_intro",
+      "value": "Prajalinks merupakan destinasi diskotik & premium nightlife lounge terdepan di Ponorogo, Jawa Timur. Menggabungkan kemegahan tata suara arena, sorotan lampu panggung spektakuler, serta kurasi DJ dan perayaan malam tak tertandingi.",
+      "createdAt": "2026-11-03T06:11:24.144Z",
+      "updatedAt": "2026-11-03T07:32:26.254Z"
+    },
+    {
+      "id": 11,
+      "key": "about_history",
+      "value": "Didirikan untuk menghidupkan kembali euforia pesta dansa sejati dengan standar modern kelas dunia di Ponorogo, Prajalinks hadir sebagai pusat hiburan malam paling dinamis di kawasan Jawa Timur. Sejak dentuman bass pertamanya, Prajalinks menjadi magnet bagi para pecinta musik elektronik, pesta berkelas, dan perayaan eksklusif.",
+      "createdAt": "2026-11-03T06:11:24.147Z",
+      "updatedAt": "2026-11-03T07:32:26.256Z"
+    },
+    {
+      "id": 12,
+      "key": "about_concept",
+      "value": "Dengan konsep High-Energy Diskotik & VIP Lounge, Prajalinks memadukan lantai dansa bergemuruh dengan zona sofa VIP yang nyaman dan eksklusif di jantung kota Ponorogo. Diperkuat teknologi lighting cerdas, visual panggung imersif, dan tata suara kustom bertaraf internasional.",
+      "createdAt": "2026-11-03T06:11:24.150Z",
+      "updatedAt": "2026-11-03T07:32:26.258Z"
+    },
+    {
+      "id": 13,
+      "key": "facilities",
+      "value": "[\"Tata suara berkekuatan tinggi berstandar arena konser dunia\",\"Sofa VIP privat dengan layanan Dedicated Host & Butler\",\"Lounge santai berpendingin udara dan bebas asap rokok\",\"Layanan parkir valet aman dan area parkir privat luas\",\"Sistem keamanan profesional dan staf berstandar hospitality\",\"Kurasi menu gastronomi malam dan mocktail artisan\"]",
+      "createdAt": "2026-11-03T06:11:24.153Z",
+      "updatedAt": "2026-11-03T07:32:26.261Z"
+    }
+  ],
+  "djs": [
+    {
+      "id": 1,
+      "slug": "dj-aurora",
+      "name": "DJ Aurora",
+      "biography": "Dikenal dengan set melodik yang membangun atmosfer mendalam dan emosional, DJ Aurora telah tampil di berbagai panggung festival musik prestisius Asia Tenggara.",
+      "genre": "Progressive House, Melodic Techno",
+      "photoUrl": "https://images.unsplash.com/photo-1563841930606-67e2bce48b78?auto=format&fit=crop&w=900&q=80",
+      "instagram": "https://instagram.com/prajalinks",
+      "spotify": "https://open.spotify.com/",
+      "youtube": null,
+      "isActive": true,
+      "createdAt": "2026-11-03T06:11:24.156Z",
+      "updatedAt": "2026-11-03T07:32:26.263Z",
+      "events": [
+        {
+          "id": 2,
+          "eventId": 1,
+          "djId": 1,
+          "sortOrder": 1,
+          "slotLabel": null,
+          "createdAt": "2026-11-03T06:11:24.181Z",
+          "updatedAt": "2026-11-03T07:32:26.281Z",
+          "event": {
+            "id": 1,
+            "slug": "malam-neon-disko",
+            "title": "Velvet Midnight: Symphony of Beats",
+            "description": "Malam perayaan utama akhir pekan dengan tata pencahayaan panggung elegan, visual atmosferik, dan penampilan kolaborasi dari dua DJ unggulan.",
+            "posterUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80",
+            "startsAt": "2026-11-10T14:00:00.000Z",
+            "endsAt": "2026-11-10T20:00:00.000Z",
+            "status": "UPCOMING",
+            "guestStars": "Special Live Vocalist: Trio Gemintang",
+            "isPublished": true,
+            "createdAt": "2026-11-03T06:11:24.170Z",
+            "updatedAt": "2026-11-03T07:32:26.273Z"
+          }
+        },
+        {
+          "id": 4,
+          "eventId": 2,
+          "djId": 1,
+          "sortOrder": 1,
+          "slotLabel": null,
+          "createdAt": "2026-11-03T06:11:24.205Z",
+          "updatedAt": "2026-11-03T07:32:26.299Z",
+          "event": {
+            "id": 2,
+            "slug": "electric-friday",
+            "title": "Prajalinks Friday: Electric Resonance",
+            "description": "Jumat malam spektakuler dengan hentakan melodic house dan peak-time techno yang imersif di lantai dansa diskotik utama.",
+            "posterUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80",
+            "startsAt": "2026-11-17T14:00:00.000Z",
+            "endsAt": "2026-11-17T20:00:00.000Z",
+            "status": "UPCOMING",
+            "guestStars": null,
+            "isPublished": true,
+            "createdAt": "2026-11-03T06:11:24.196Z",
+            "updatedAt": "2026-11-03T07:32:26.292Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "dj-kobra",
+      "name": "DJ Kobra",
+      "biography": "Menyuguhkan dentuman bass bertenaga dan transisi dinamis, DJ Kobra menguasai panggung malam puncak dengan energi yang memukau lantai dansa.",
+      "genre": "Peak Time Techno, Big Room",
+      "photoUrl": "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?auto=format&fit=crop&w=900&q=80",
+      "instagram": "https://instagram.com/prajalinks",
+      "spotify": null,
+      "youtube": "https://youtube.com/@prajalinks",
+      "isActive": true,
+      "createdAt": "2026-11-03T06:11:24.162Z",
+      "updatedAt": "2026-11-03T07:32:26.266Z",
+      "events": [
+        {
+          "id": 3,
+          "eventId": 2,
+          "djId": 2,
+          "sortOrder": 0,
+          "slotLabel": null,
+          "createdAt": "2026-11-03T06:11:24.201Z",
+          "updatedAt": "2026-11-03T07:32:26.296Z",
+          "event": {
+            "id": 2,
+            "slug": "electric-friday",
+            "title": "Prajalinks Friday: Electric Resonance",
+            "description": "Jumat malam spektakuler dengan hentakan melodic house dan peak-time techno yang imersif di lantai dansa diskotik utama.",
+            "posterUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80",
+            "startsAt": "2026-11-17T14:00:00.000Z",
+            "endsAt": "2026-11-17T20:00:00.000Z",
+            "status": "UPCOMING",
+            "guestStars": null,
+            "isPublished": true,
+            "createdAt": "2026-11-03T06:11:24.196Z",
+            "updatedAt": "2026-11-03T07:32:26.292Z"
+          }
+        },
+        {
+          "id": 5,
+          "eventId": 3,
+          "djId": 2,
+          "sortOrder": 0,
+          "slotLabel": null,
+          "createdAt": "2026-11-03T06:11:24.220Z",
+          "updatedAt": "2026-11-03T07:32:26.313Z",
+          "event": {
+            "id": 3,
+            "slug": "sabtu-sinar-bulan",
+            "title": "Saturday Prestige: Golden Hour Session",
+            "description": "Sesi istimewa malam ini yang menghadirkan seleksi lagu disko dan house terbaik, ditemani minuman mocktail artisan dan atmosfer lounge eksklusif.",
+            "posterUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80",
+            "startsAt": "2026-11-03T13:00:00.000Z",
+            "endsAt": "2026-11-03T20:00:00.000Z",
+            "status": "ONGOING",
+            "guestStars": "Special Guest Saxophonist",
+            "isPublished": true,
+            "createdAt": "2026-11-03T06:11:24.215Z",
+            "updatedAt": "2026-11-03T07:32:26.308Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "dj-senja",
+      "name": "DJ Senja",
+      "biography": "Meramu elemen disko klasik dengan ritme kontemporer yang hangat, set DJ Senja adalah pengantar sempurna menuju malam yang elegan.",
+      "genre": "Nu-Disco, Deep House, Afro House",
+      "photoUrl": "https://images.unsplash.com/photo-1516873240891-4bf014598ab4?auto=format&fit=crop&w=900&q=80",
+      "instagram": "https://instagram.com/prajalinks",
+      "spotify": "https://open.spotify.com/",
+      "youtube": null,
+      "isActive": true,
+      "createdAt": "2026-11-03T06:11:24.165Z",
+      "updatedAt": "2026-11-03T07:32:26.269Z",
+      "events": [
+        {
+          "id": 1,
+          "eventId": 1,
+          "djId": 3,
+          "sortOrder": 0,
+          "slotLabel": null,
+          "createdAt": "2026-11-03T06:11:24.177Z",
+          "updatedAt": "2026-11-03T07:32:26.278Z",
+          "event": {
+            "id": 1,
+            "slug": "malam-neon-disko",
+            "title": "Velvet Midnight: Symphony of Beats",
+            "description": "Malam perayaan utama akhir pekan dengan tata pencahayaan panggung elegan, visual atmosferik, dan penampilan kolaborasi dari dua DJ unggulan.",
+            "posterUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80",
+            "startsAt": "2026-11-10T14:00:00.000Z",
+            "endsAt": "2026-11-10T20:00:00.000Z",
+            "status": "UPCOMING",
+            "guestStars": "Special Live Vocalist: Trio Gemintang",
+            "isPublished": true,
+            "createdAt": "2026-11-03T06:11:24.170Z",
+            "updatedAt": "2026-11-03T07:32:26.273Z"
+          }
+        },
+        {
+          "id": 6,
+          "eventId": 3,
+          "djId": 3,
+          "sortOrder": 1,
+          "slotLabel": null,
+          "createdAt": "2026-11-03T06:11:24.224Z",
+          "updatedAt": "2026-11-03T07:32:26.316Z",
+          "event": {
+            "id": 3,
+            "slug": "sabtu-sinar-bulan",
+            "title": "Saturday Prestige: Golden Hour Session",
+            "description": "Sesi istimewa malam ini yang menghadirkan seleksi lagu disko dan house terbaik, ditemani minuman mocktail artisan dan atmosfer lounge eksklusif.",
+            "posterUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80",
+            "startsAt": "2026-11-03T13:00:00.000Z",
+            "endsAt": "2026-11-03T20:00:00.000Z",
+            "status": "ONGOING",
+            "guestStars": "Special Guest Saxophonist",
+            "isPublished": true,
+            "createdAt": "2026-11-03T06:11:24.215Z",
+            "updatedAt": "2026-11-03T07:32:26.308Z"
+          }
+        },
+        {
+          "id": 7,
+          "eventId": 4,
+          "djId": 3,
+          "sortOrder": 0,
+          "slotLabel": null,
+          "createdAt": "2026-11-03T06:11:24.235Z",
+          "updatedAt": "2026-11-03T07:32:26.326Z",
+          "event": {
+            "id": 4,
+            "slug": "retro-night-vol-1",
+            "title": "Retro Reverie: Classic Era Archive",
+            "description": "Arsip dokumentasi perayaan malam retro dengan koleksi piringan hitam klasik dan nuansa hangat masa keemasan disko.",
+            "posterUrl": "https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&w=1200&q=80",
+            "startsAt": "2026-10-13T14:00:00.000Z",
+            "endsAt": "2026-10-13T19:00:00.000Z",
+            "status": "COMPLETED",
+            "guestStars": null,
+            "isPublished": true,
+            "createdAt": "2026-11-03T06:11:24.231Z",
+            "updatedAt": "2026-11-03T07:32:26.323Z"
+          }
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "slug": "malam-neon-disko",
+      "title": "Velvet Midnight: Symphony of Beats",
+      "description": "Malam perayaan utama akhir pekan dengan tata pencahayaan panggung elegan, visual atmosferik, dan penampilan kolaborasi dari dua DJ unggulan.",
+      "posterUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80",
+      "startsAt": "2026-11-10T14:00:00.000Z",
+      "endsAt": "2026-11-10T20:00:00.000Z",
+      "status": "UPCOMING",
+      "guestStars": "Special Live Vocalist: Trio Gemintang",
+      "isPublished": true,
+      "createdAt": "2026-11-03T06:11:24.170Z",
+      "updatedAt": "2026-11-03T07:32:26.273Z",
+      "djs": [
+        {
+          "id": 1,
+          "eventId": 1,
+          "djId": 3,
+          "sortOrder": 0,
+          "slotLabel": null,
+          "createdAt": "2026-11-03T06:11:24.177Z",
+          "updatedAt": "2026-11-03T07:32:26.278Z",
+          "dj": {
+            "id": 3,
+            "slug": "dj-senja",
+            "name": "DJ Senja",
+            "biography": "Meramu elemen disko klasik dengan ritme kontemporer yang hangat, set DJ Senja adalah pengantar sempurna menuju malam yang elegan.",
+            "genre": "Nu-Disco, Deep House, Afro House",
+            "photoUrl": "https://images.unsplash.com/photo-1516873240891-4bf014598ab4?auto=format&fit=crop&w=900&q=80",
+            "instagram": "https://instagram.com/prajalinks",
+            "spotify": "https://open.spotify.com/",
+            "youtube": null,
+            "isActive": true,
+            "createdAt": "2026-11-03T06:11:24.165Z",
+            "updatedAt": "2026-11-03T07:32:26.269Z"
+          }
+        },
+        {
+          "id": 2,
+          "eventId": 1,
+          "djId": 1,
+          "sortOrder": 1,
+          "slotLabel": null,
+          "createdAt": "2026-11-03T06:11:24.181Z",
+          "updatedAt": "2026-11-03T07:32:26.281Z",
+          "dj": {
+            "id": 1,
+            "slug": "dj-aurora",
+            "name": "DJ Aurora",
+            "biography": "Dikenal dengan set melodik yang membangun atmosfer mendalam dan emosional, DJ Aurora telah tampil di berbagai panggung festival musik prestisius Asia Tenggara.",
+            "genre": "Progressive House, Melodic Techno",
+            "photoUrl": "https://images.unsplash.com/photo-1563841930606-67e2bce48b78?auto=format&fit=crop&w=900&q=80",
+            "instagram": "https://instagram.com/prajalinks",
+            "spotify": "https://open.spotify.com/",
+            "youtube": null,
+            "isActive": true,
+            "createdAt": "2026-11-03T06:11:24.156Z",
+            "updatedAt": "2026-11-03T07:32:26.263Z"
+          }
+        }
+      ],
+      "tickets": [
+        {
+          "id": 31,
+          "eventId": 1,
+          "name": "General Admission",
+          "price": 200000,
+          "quota": 300,
+          "isActive": true,
+          "createdAt": "2026-11-03T07:32:26.287Z",
+          "updatedAt": "2026-11-03T07:32:26.287Z"
+        },
+        {
+          "id": 32,
+          "eventId": 1,
+          "name": "Early Bird",
+          "price": 150000,
+          "quota": 100,
+          "isActive": true,
+          "createdAt": "2026-11-03T07:32:26.290Z",
+          "updatedAt": "2026-11-03T07:32:26.290Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "electric-friday",
+      "title": "Prajalinks Friday: Electric Resonance",
+      "description": "Jumat malam spektakuler dengan hentakan melodic house dan peak-time techno yang imersif di lantai dansa diskotik utama.",
+      "posterUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80",
+      "startsAt": "2026-11-17T14:00:00.000Z",
+      "endsAt": "2026-11-17T20:00:00.000Z",
+      "status": "UPCOMING",
+      "guestStars": null,
+      "isPublished": true,
+      "createdAt": "2026-11-03T06:11:24.196Z",
+      "updatedAt": "2026-11-03T07:32:26.292Z",
+      "djs": [
+        {
+          "id": 3,
+          "eventId": 2,
+          "djId": 2,
+          "sortOrder": 0,
+          "slotLabel": null,
+          "createdAt": "2026-11-03T06:11:24.201Z",
+          "updatedAt": "2026-11-03T07:32:26.296Z",
+          "dj": {
+            "id": 2,
+            "slug": "dj-kobra",
+            "name": "DJ Kobra",
+            "biography": "Menyuguhkan dentuman bass bertenaga dan transisi dinamis, DJ Kobra menguasai panggung malam puncak dengan energi yang memukau lantai dansa.",
+            "genre": "Peak Time Techno, Big Room",
+            "photoUrl": "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?auto=format&fit=crop&w=900&q=80",
+            "instagram": "https://instagram.com/prajalinks",
+            "spotify": null,
+            "youtube": "https://youtube.com/@prajalinks",
+            "isActive": true,
+            "createdAt": "2026-11-03T06:11:24.162Z",
+            "updatedAt": "2026-11-03T07:32:26.266Z"
+          }
+        },
+        {
+          "id": 4,
+          "eventId": 2,
+          "djId": 1,
+          "sortOrder": 1,
+          "slotLabel": null,
+          "createdAt": "2026-11-03T06:11:24.205Z",
+          "updatedAt": "2026-11-03T07:32:26.299Z",
+          "dj": {
+            "id": 1,
+            "slug": "dj-aurora",
+            "name": "DJ Aurora",
+            "biography": "Dikenal dengan set melodik yang membangun atmosfer mendalam dan emosional, DJ Aurora telah tampil di berbagai panggung festival musik prestisius Asia Tenggara.",
+            "genre": "Progressive House, Melodic Techno",
+            "photoUrl": "https://images.unsplash.com/photo-1563841930606-67e2bce48b78?auto=format&fit=crop&w=900&q=80",
+            "instagram": "https://instagram.com/prajalinks",
+            "spotify": "https://open.spotify.com/",
+            "youtube": null,
+            "isActive": true,
+            "createdAt": "2026-11-03T06:11:24.156Z",
+            "updatedAt": "2026-11-03T07:32:26.263Z"
+          }
+        }
+      ],
+      "tickets": [
+        {
+          "id": 33,
+          "eventId": 2,
+          "name": "General Admission",
+          "price": 250000,
+          "quota": 400,
+          "isActive": true,
+          "createdAt": "2026-11-03T07:32:26.304Z",
+          "updatedAt": "2026-11-03T07:32:26.304Z"
+        },
+        {
+          "id": 34,
+          "eventId": 2,
+          "name": "Fast Track Access",
+          "price": 350000,
+          "quota": 80,
+          "isActive": true,
+          "createdAt": "2026-11-03T07:32:26.306Z",
+          "updatedAt": "2026-11-03T07:32:26.306Z"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "sabtu-sinar-bulan",
+      "title": "Saturday Prestige: Golden Hour Session",
+      "description": "Sesi istimewa malam ini yang menghadirkan seleksi lagu disko dan house terbaik, ditemani minuman mocktail artisan dan atmosfer lounge eksklusif.",
+      "posterUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80",
+      "startsAt": "2026-11-03T13:00:00.000Z",
+      "endsAt": "2026-11-03T20:00:00.000Z",
+      "status": "ONGOING",
+      "guestStars": "Special Guest Saxophonist",
+      "isPublished": true,
+      "createdAt": "2026-11-03T06:11:24.215Z",
+      "updatedAt": "2026-11-03T07:32:26.308Z",
+      "djs": [
+        {
+          "id": 5,
+          "eventId": 3,
+          "djId": 2,
+          "sortOrder": 0,
+          "slotLabel": null,
+          "createdAt": "2026-11-03T06:11:24.220Z",
+          "updatedAt": "2026-11-03T07:32:26.313Z",
+          "dj": {
+            "id": 2,
+            "slug": "dj-kobra",
+            "name": "DJ Kobra",
+            "biography": "Menyuguhkan dentuman bass bertenaga dan transisi dinamis, DJ Kobra menguasai panggung malam puncak dengan energi yang memukau lantai dansa.",
+            "genre": "Peak Time Techno, Big Room",
+            "photoUrl": "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?auto=format&fit=crop&w=900&q=80",
+            "instagram": "https://instagram.com/prajalinks",
+            "spotify": null,
+            "youtube": "https://youtube.com/@prajalinks",
+            "isActive": true,
+            "createdAt": "2026-11-03T06:11:24.162Z",
+            "updatedAt": "2026-11-03T07:32:26.266Z"
+          }
+        },
+        {
+          "id": 6,
+          "eventId": 3,
+          "djId": 3,
+          "sortOrder": 1,
+          "slotLabel": null,
+          "createdAt": "2026-11-03T06:11:24.224Z",
+          "updatedAt": "2026-11-03T07:32:26.316Z",
+          "dj": {
+            "id": 3,
+            "slug": "dj-senja",
+            "name": "DJ Senja",
+            "biography": "Meramu elemen disko klasik dengan ritme kontemporer yang hangat, set DJ Senja adalah pengantar sempurna menuju malam yang elegan.",
+            "genre": "Nu-Disco, Deep House, Afro House",
+            "photoUrl": "https://images.unsplash.com/photo-1516873240891-4bf014598ab4?auto=format&fit=crop&w=900&q=80",
+            "instagram": "https://instagram.com/prajalinks",
+            "spotify": "https://open.spotify.com/",
+            "youtube": null,
+            "isActive": true,
+            "createdAt": "2026-11-03T06:11:24.165Z",
+            "updatedAt": "2026-11-03T07:32:26.269Z"
+          }
+        }
+      ],
+      "tickets": [
+        {
+          "id": 35,
+          "eventId": 3,
+          "name": "General Admission",
+          "price": 250000,
+          "quota": 350,
+          "isActive": true,
+          "createdAt": "2026-11-03T07:32:26.320Z",
+          "updatedAt": "2026-11-03T07:32:26.320Z"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "retro-night-vol-1",
+      "title": "Retro Reverie: Classic Era Archive",
+      "description": "Arsip dokumentasi perayaan malam retro dengan koleksi piringan hitam klasik dan nuansa hangat masa keemasan disko.",
+      "posterUrl": "https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&w=1200&q=80",
+      "startsAt": "2026-10-13T14:00:00.000Z",
+      "endsAt": "2026-10-13T19:00:00.000Z",
+      "status": "COMPLETED",
+      "guestStars": null,
+      "isPublished": true,
+      "createdAt": "2026-11-03T06:11:24.231Z",
+      "updatedAt": "2026-11-03T07:32:26.323Z",
+      "djs": [
+        {
+          "id": 7,
+          "eventId": 4,
+          "djId": 3,
+          "sortOrder": 0,
+          "slotLabel": null,
+          "createdAt": "2026-11-03T06:11:24.235Z",
+          "updatedAt": "2026-11-03T07:32:26.326Z",
+          "dj": {
+            "id": 3,
+            "slug": "dj-senja",
+            "name": "DJ Senja",
+            "biography": "Meramu elemen disko klasik dengan ritme kontemporer yang hangat, set DJ Senja adalah pengantar sempurna menuju malam yang elegan.",
+            "genre": "Nu-Disco, Deep House, Afro House",
+            "photoUrl": "https://images.unsplash.com/photo-1516873240891-4bf014598ab4?auto=format&fit=crop&w=900&q=80",
+            "instagram": "https://instagram.com/prajalinks",
+            "spotify": "https://open.spotify.com/",
+            "youtube": null,
+            "isActive": true,
+            "createdAt": "2026-11-03T06:11:24.165Z",
+            "updatedAt": "2026-11-03T07:32:26.269Z"
+          }
+        }
+      ],
+      "tickets": [
+        {
+          "id": 36,
+          "eventId": 4,
+          "name": "General Admission",
+          "price": 175000,
+          "quota": 250,
+          "isActive": true,
+          "createdAt": "2026-11-03T07:32:26.332Z",
+          "updatedAt": "2026-11-03T07:32:26.332Z"
+        }
+      ]
+    }
+  ],
+  "vips": [
+    {
+      "id": 1,
+      "slug": "vip-silver",
+      "name": "Silver Lounge Suite",
+      "description": "Sofa semi-privat nyaman dengan sudut pandang langsung ke lantai dansa, ideal untuk pertemuan intim atau perayaan lingkaran dekat.",
+      "facilities": [
+        "Meja lounge privat berkapasitas 6 tamu",
+        "2 botol premium non-alcoholic sparkling",
+        "Pilihan finger food & truffle platter",
+        "Dedicated Host & layanan meja khusus",
+        "Priority VIP entrance & valet parking"
+      ],
+      "maxCapacity": 6,
+      "price": 3500000,
+      "photoUrl": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1000&q=80",
+      "isAvailable": true,
+      "sortOrder": 1,
+      "createdAt": "2026-11-03T06:11:24.242Z",
+      "updatedAt": "2026-11-03T07:32:26.334Z"
+    },
+    {
+      "id": 2,
+      "slug": "vip-gold",
+      "name": "Gold Royal Booth",
+      "description": "Bilik sofa velvet eksklusif di area terdepan panggung dengan privasi tinggi, kenyamanan paripurna, dan layanan concierge khusus.",
+      "facilities": [
+        "Sofa U-shape luas berkapasitas 10 tamu",
+        "4 botol artisan mocktail & botanical infusions",
+        "Gourmet culinary sharing platter",
+        "Dedicated Personal Butler sepanjang malam",
+        "Akses jalur cepat VIP tanpa antrean & 2 tiket valet",
+        "Pengaturan dekorasi personal atas permintaan"
+      ],
+      "maxCapacity": 10,
+      "price": 6500000,
+      "photoUrl": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1000&q=80",
+      "isAvailable": true,
+      "sortOrder": 2,
+      "createdAt": "2026-11-03T06:11:24.247Z",
+      "updatedAt": "2026-11-03T07:32:26.337Z"
+    },
+    {
+      "id": 3,
+      "slug": "vip-diamond",
+      "name": "The Presidential Diamond Suite",
+      "description": "Kemewahan ruang paling bergengsi di Prajalinks. Ruang perjamuan privat di lantai mezanin dengan balkon khusus menghadap panggung DJ dan lantai dansa.",
+      "facilities": [
+        "Private VIP Suite mezanin berkapasitas 16 tamu",
+        "8 botol signature artisan beverages & sparkling",
+        "Full-course gourmet dining menu oleh Chef Eksekutif",
+        "2 Dedicated Butler privat & Head Sommelier",
+        "Pintu masuk privat eksklusif dengan lift khusus",
+        "Kamar rias privat & fasilitas kamar mandi mewah"
+      ],
+      "maxCapacity": 16,
+      "price": 15000000,
+      "photoUrl": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80",
+      "isAvailable": true,
+      "sortOrder": 3,
+      "createdAt": "2026-11-03T06:11:24.249Z",
+      "updatedAt": "2026-11-03T07:32:26.340Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Gastronomi Malam",
+      "slug": "makanan",
+      "sortOrder": 1,
+      "createdAt": "2026-11-03T06:11:24.253Z",
+      "updatedAt": "2026-11-03T07:32:26.343Z",
+      "items": [
+        {
+          "id": 1,
+          "categoryId": 1,
+          "name": "Nasi Goreng Nocturne",
+          "description": "Nasi goreng dengan ayam suwir, telur, dan acar.",
+          "price": 55000,
+          "photoUrl": null,
+          "isAvailable": true,
+          "isActive": true,
+          "sortOrder": 0,
+          "createdAt": "2026-11-03T06:11:24.257Z",
+          "updatedAt": "2026-11-03T06:11:24.257Z"
+        },
+        {
+          "id": 2,
+          "categoryId": 1,
+          "name": "Chicken Wings",
+          "description": "Sayap ayam renyah dengan saus pilihan.",
+          "price": 65000,
+          "photoUrl": null,
+          "isAvailable": true,
+          "isActive": true,
+          "sortOrder": 1,
+          "createdAt": "2026-11-03T06:11:24.261Z",
+          "updatedAt": "2026-11-03T06:11:24.261Z"
+        },
+        {
+          "id": 3,
+          "categoryId": 1,
+          "name": "Truffle Fries",
+          "description": "Kentang goreng dengan bumbu truffle dan keju parut.",
+          "price": 48000,
+          "photoUrl": null,
+          "isAvailable": true,
+          "isActive": true,
+          "sortOrder": 2,
+          "createdAt": "2026-11-03T06:11:24.263Z",
+          "updatedAt": "2026-11-03T06:11:24.263Z"
+        },
+        {
+          "id": 7,
+          "categoryId": 1,
+          "name": "Wagyu Beef Sliders",
+          "description": "Tiga burger mini dengan patty wagyu MB7, caramelized onions, smoked cheddar, dan brioche panggang.",
+          "price": 110000,
+          "photoUrl": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
+          "isAvailable": true,
+          "isActive": true,
+          "sortOrder": 0,
+          "createdAt": "2026-11-03T06:24:58.115Z",
+          "updatedAt": "2026-11-03T07:32:26.348Z"
+        },
+        {
+          "id": 8,
+          "categoryId": 1,
+          "name": "Crispy Calamari & Truffle Aioli",
+          "description": "Cumi goreng tepung renyah dengan bumbu lada garam togarashi dan saus aioli truffle hitam.",
+          "price": 85000,
+          "photoUrl": "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=800&q=80",
+          "isAvailable": true,
+          "isActive": true,
+          "sortOrder": 1,
+          "createdAt": "2026-11-03T06:24:58.118Z",
+          "updatedAt": "2026-11-03T07:32:26.351Z"
+        },
+        {
+          "id": 9,
+          "categoryId": 1,
+          "name": "Parmesan Truffle Fries",
+          "description": "Kentang goreng potongan ganda dengan minyak truffle murni, taburan keju parmigiano reggiano, dan peterseli segar.",
+          "price": 65000,
+          "photoUrl": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+          "isAvailable": true,
+          "isActive": true,
+          "sortOrder": 2,
+          "createdAt": "2026-11-03T06:24:58.120Z",
+          "updatedAt": "2026-11-03T07:32:26.354Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Artisan Mocktails & Botanicals",
+      "slug": "minuman-non-alkohol",
+      "sortOrder": 2,
+      "createdAt": "2026-11-03T06:11:24.265Z",
+      "updatedAt": "2026-11-03T07:32:26.357Z",
+      "items": [
+        {
+          "id": 4,
+          "categoryId": 2,
+          "name": "Neon Lychee Soda",
+          "description": "Soda leci segar dengan es dan mint.",
+          "price": 38000,
+          "photoUrl": null,
+          "isAvailable": true,
+          "isActive": true,
+          "sortOrder": 0,
+          "createdAt": "2026-11-03T06:11:24.269Z",
+          "updatedAt": "2026-11-03T06:11:24.269Z"
+        },
+        {
+          "id": 5,
+          "categoryId": 2,
+          "name": "Es Teh Tarik Susu",
+          "description": "Teh tarik dingin dengan susu creamy.",
+          "price": 32000,
+          "photoUrl": null,
+          "isAvailable": true,
+          "isActive": true,
+          "sortOrder": 1,
+          "createdAt": "2026-11-03T06:11:24.272Z",
+          "updatedAt": "2026-11-03T06:11:24.272Z"
+        },
+        {
+          "id": 6,
+          "categoryId": 2,
+          "name": "Mocktail Sunset",
+          "description": "Jus jeruk, grenadine, dan soda dengan irisan jeruk.",
+          "price": 45000,
+          "photoUrl": null,
+          "isAvailable": false,
+          "isActive": true,
+          "sortOrder": 2,
+          "createdAt": "2026-11-03T06:11:24.275Z",
+          "updatedAt": "2026-11-03T06:11:24.275Z"
+        },
+        {
+          "id": 10,
+          "categoryId": 2,
+          "name": "Velvet Burgundy Spritz",
+          "description": "Red grape reduction, sirup delima organik, air mawar, dan sparkling water berkarbonasi lembut.",
+          "price": 58000,
+          "photoUrl": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80",
+          "isAvailable": true,
+          "isActive": true,
+          "sortOrder": 0,
+          "createdAt": "2026-11-03T06:24:58.125Z",
+          "updatedAt": "2026-11-03T07:32:26.361Z"
+        },
+        {
+          "id": 11,
+          "categoryId": 2,
+          "name": "Champagne Gold Elixir",
+          "description": "Seduhan teh putih jarum perak, sari persik putih, lemon meyer, dan hiasan edible gold leaf 24k.",
+          "price": 65000,
+          "photoUrl": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80",
+          "isAvailable": true,
+          "isActive": true,
+          "sortOrder": 1,
+          "createdAt": "2026-11-03T06:24:58.128Z",
+          "updatedAt": "2026-11-03T07:32:26.364Z"
+        },
+        {
+          "id": 12,
+          "categoryId": 2,
+          "name": "Smoked Yuzu Highball",
+          "description": "Jus yuzu Jepang, sirup agave panggang, sentuhan rosemary asap, dan soda premium.",
+          "price": 55000,
+          "photoUrl": "https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=800&q=80",
+          "isAvailable": true,
+          "isActive": true,
+          "sortOrder": 2,
+          "createdAt": "2026-11-03T06:24:58.131Z",
+          "updatedAt": "2026-11-03T07:32:26.367Z"
+        }
+      ]
+    }
+  ],
+  "gallery": [
+    {
+      "id": 1,
+      "categoryId": null,
+      "title": "Main Dancefloor & Acoustics",
+      "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80",
+      "isPublished": true,
+      "sortOrder": 1,
+      "createdAt": "2026-11-03T06:24:58.134Z",
+      "updatedAt": "2026-11-03T07:32:26.371Z"
+    },
+    {
+      "id": 2,
+      "categoryId": null,
+      "title": "VIP Velvet Booths",
+      "imageUrl": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1200&q=80",
+      "isPublished": true,
+      "sortOrder": 2,
+      "createdAt": "2026-11-03T06:24:58.136Z",
+      "updatedAt": "2026-11-03T07:32:26.374Z"
+    },
+    {
+      "id": 3,
+      "categoryId": null,
+      "title": "Cocktail & Lounge Bar",
+      "imageUrl": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80",
+      "isPublished": true,
+      "sortOrder": 3,
+      "createdAt": "2026-11-03T06:24:58.139Z",
+      "updatedAt": "2026-11-03T07:32:26.378Z"
+    },
+    {
+      "id": 4,
+      "categoryId": null,
+      "title": "DJ Stage Lighting & Atmosphere",
+      "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80",
+      "isPublished": true,
+      "sortOrder": 4,
+      "createdAt": "2026-11-03T06:24:58.141Z",
+      "updatedAt": "2026-11-03T07:32:26.382Z"
+    },
+    {
+      "id": 5,
+      "categoryId": null,
+      "title": "Private Mezzanine Balcony",
+      "imageUrl": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80",
+      "isPublished": true,
+      "sortOrder": 5,
+      "createdAt": "2026-11-03T06:24:58.144Z",
+      "updatedAt": "2026-11-03T07:32:26.385Z"
+    },
+    {
+      "id": 6,
+      "categoryId": null,
+      "title": "Signature Gastronomy",
+      "imageUrl": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80",
+      "isPublished": true,
+      "sortOrder": 6,
+      "createdAt": "2026-11-03T06:24:58.146Z",
+      "updatedAt": "2026-11-03T07:32:26.387Z"
+    }
+  ]
+}

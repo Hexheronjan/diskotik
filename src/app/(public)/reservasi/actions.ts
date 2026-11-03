@@ -78,10 +78,10 @@ export async function createReservationAction(formData: FormData): Promise<Reser
   const randomSuffix = Math.floor(1000 + Math.random() * 9000);
   const code = `PRJ-VIP-${randomSuffix}`;
 
-  try {
-    let tableId: number | undefined;
-    let packageName: string | null = null;
+  let tableId: number | undefined;
+  let packageName: string | null = null;
 
+  try {
     if (packageSlug) {
       const vipPkg = await db.vipPackage.findUnique({
         where: { slug: packageSlug },
@@ -94,9 +94,14 @@ export async function createReservationAction(formData: FormData): Promise<Reser
         }
       }
     }
+  } catch {
+    // If database is offline, fallback to package slug formatting
+    packageName = packageSlug ? packageSlug.replace(/-/g, " ").toUpperCase() : null;
+  }
 
-    const reservationDate = new Date(reservedFor);
+  const reservationDate = new Date(reservedFor);
 
+  try {
     await db.reservation.create({
       data: {
         code,
@@ -110,40 +115,36 @@ export async function createReservationAction(formData: FormData): Promise<Reser
         status: "PENDING",
       },
     });
-
-    const dateFormatted = reservationDate.toLocaleDateString("id-ID", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-
-    const message = encodeURIComponent(
-      `Halo Prajalinks Ponorogo, saya telah mengirim reservasi meja online melalui website:\n\n` +
-        `• Kode Booking: *${code}*\n` +
-        `• Nama: *${customerName}*\n` +
-        `• Tanggal: *${dateFormatted}*\n` +
-        `• Jumlah Tamu: *${guestCount} Orang*\n` +
-        (packageName ? `• Pilihan Paket: *${packageName}*\n` : "") +
-        `\nMohon konfirmasi ketersediaan meja VIP untuk kunjungan kami. Terima kasih!`,
-    );
-
-    const whatsappUrl = `https://wa.me/6285151951806?text=${message}`;
-
-    return {
-      success: true,
-      code,
-      customerName,
-      reservedFor: dateFormatted,
-      guestCount,
-      packageName,
-      whatsappUrl,
-    };
-  } catch (err) {
-    console.error("Gagal membuat reservasi:", err);
-    return {
-      success: false,
-      error: "Terjadi gangguan saat memproses reservasi. Silakan coba lagi atau hubungi langsung via WhatsApp.",
-    };
+  } catch (dbErr) {
+    console.warn("DB offline during reservation creation, continuing with WhatsApp direct link:", (dbErr as Error).message);
   }
+
+  const dateFormatted = reservationDate.toLocaleDateString("id-ID", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+  const message = encodeURIComponent(
+    `Halo Prajalinks Ponorogo, saya telah mengirim reservasi meja online melalui website:\n\n` +
+      `• Kode Booking: *${code}*\n` +
+      `• Nama: *${customerName}*\n` +
+      `• Tanggal: *${dateFormatted}*\n` +
+      `• Jumlah Tamu: *${guestCount} Orang*\n` +
+      (packageName ? `• Pilihan Paket: *${packageName}*\n` : "") +
+      `\nMohon konfirmasi ketersediaan meja VIP untuk kunjungan kami. Terima kasih!`,
+  );
+
+  const whatsappUrl = `https://wa.me/6285151951806?text=${message}`;
+
+  return {
+    success: true,
+    code,
+    customerName,
+    reservedFor: dateFormatted,
+    guestCount,
+    packageName,
+    whatsappUrl,
+  };
 }
