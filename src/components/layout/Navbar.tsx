@@ -12,16 +12,17 @@ interface NavLinkItem {
   label: string;
   icon: IconName;
   desc: string;
+  short: string;
 }
 
 const LINKS: NavLinkItem[] = [
-  { href: "/", label: "Beranda", icon: "sparkle", desc: "Suasana & Highlight Pesta" },
-  { href: "/acara", label: "Jadwal Acara", icon: "calendar", desc: "Pesta & Event Mendatang" },
-  { href: "/dj", label: "Lineup DJ", icon: "disc", desc: "Resident & Guest DJ" },
-  { href: "/menu", label: "Menu Minuman", icon: "glass", desc: "Cocktail & Bottle Packages" },
-  { href: "/vip", label: "Paket VIP", icon: "crown", desc: "Sofa Suite & Eksklusif Service" },
-  { href: "/reservasi", label: "Reservasi Meja", icon: "star", desc: "Booking Meja VIP Cepat" },
-  { href: "/tentang-kami", label: "Tentang Kami", icon: "pin", desc: "Lokasi & Aturan Masuk" },
+  { href: "/", label: "Beranda", short: "Beranda", icon: "sparkle", desc: "Suasana & Highlight Pesta" },
+  { href: "/acara", label: "Jadwal Acara", short: "Acara", icon: "calendar", desc: "Pesta & Event Mendatang" },
+  { href: "/dj", label: "Lineup DJ", short: "DJ", icon: "disc", desc: "Resident & Guest DJ" },
+  { href: "/menu", label: "Menu Minuman", short: "Menu", icon: "glass", desc: "Cocktail & Bottle Packages" },
+  { href: "/vip", label: "Paket VIP", short: "Paket VIP", icon: "crown", desc: "Sofa Suite & Eksklusif Service" },
+  { href: "/reservasi", label: "Reservasi Meja", short: "Reservasi", icon: "star", desc: "Booking Meja VIP Cepat" },
+  { href: "/tentang-kami", label: "Tentang Kami", short: "Tentang Kami", icon: "pin", desc: "Lokasi & Aturan Masuk" },
 ];
 
 function isActive(pathname: string, href: string) {
@@ -100,7 +101,7 @@ export function Navbar({ siteName }: { siteName: string }) {
           {LINKS.map((l) => (
             <li key={l.href}>
               <Link href={l.href} className={styles.link} aria-current={isActive(pathname, l.href) ? "page" : undefined}>
-                {l.label}
+                {l.short}
               </Link>
             </li>
           ))}
