@@ -7,7 +7,6 @@ const BRAND_LETTERS = "prajalinks".split("");
 const EQUALIZER_BARS = [0.4, 0.9, 0.6, 1.0, 0.7, 0.3, 0.85, 0.5, 0.95, 0.4, 0.75, 0.6, 0.8];
 
 export function Preloader() {
-  const [progress, setProgress] = useState(15);
   const [isExiting, setIsExiting] = useState(false);
   const [isDone, setIsDone] = useState(false);
 
@@ -16,8 +15,8 @@ export function Preloader() {
     try {
       const hasVisited = window.sessionStorage.getItem("prajalinks_loaded");
       if (hasVisited) {
-        const skipTimer = setTimeout(() => setIsDone(true), 0);
-        return () => clearTimeout(skipTimer);
+        setIsDone(true);
+        return;
       }
     } catch {
       // ignore
@@ -26,19 +25,7 @@ export function Preloader() {
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
-    // Progress increments to simulate sound engine & atmosphere setup
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          return 100;
-        }
-        const step = Math.floor(Math.random() * 25) + 15;
-        return Math.min(prev + step, 100);
-      });
-    }, 180);
-
-    // Trigger exit animation after ~1.1s
+    // Fast & ultra-smooth exit timing (0.95s active, then 0.35s fadeout)
     const exitTimer = setTimeout(() => {
       setIsExiting(true);
       try {
@@ -46,16 +33,14 @@ export function Preloader() {
       } catch {
         // storage disabled fallback
       }
-    }, 1100);
+    }, 950);
 
-    // Complete removal after transition ends
     const doneTimer = setTimeout(() => {
       setIsDone(true);
       document.body.style.overflow = prevOverflow;
-    }, 1600);
+    }, 1350);
 
     return () => {
-      clearInterval(interval);
       clearTimeout(exitTimer);
       clearTimeout(doneTimer);
       document.body.style.overflow = prevOverflow;
@@ -69,20 +54,18 @@ export function Preloader() {
       className={`${styles.preloader} ${isExiting ? styles.exiting : ""}`}
       role="progressbar"
       aria-label="Memuat Prajalinks Diskotik"
-      aria-valuenow={progress}
       aria-valuemin={0}
       aria-valuemax={100}
     >
       <div className={styles.ambientLights} aria-hidden="true">
         <div className={styles.glowMagenta} />
-        <div className={styles.glowCyan} />
-        <div className={styles.laserLine} />
+        <div className={styles.glowGold} />
       </div>
 
       <div className={styles.content}>
         <div className={styles.brandBadge}>
           <span className={styles.dot} />
-          <span>Diskotik &amp; Club</span>
+          <span>Diskotik &amp; VIP Club</span>
         </div>
 
         <div className={styles.brandTitle} aria-label="prajalinks">
@@ -90,7 +73,7 @@ export function Preloader() {
             <span
               key={i}
               className={styles.letter}
-              style={{ animationDelay: `${i * 0.05}s` }}
+              style={{ animationDelay: `${i * 0.04}s` }}
             >
               {letter}
             </span>
@@ -105,8 +88,8 @@ export function Preloader() {
               className={styles.bar}
               style={{
                 height: `${height * 100}%`,
-                animationDelay: `${(i % 5) * 0.12}s`,
-                animationDuration: `${0.6 + (i % 4) * 0.15}s`,
+                animationDelay: `${(i % 5) * 0.1}s`,
+                animationDuration: `${0.6 + (i % 4) * 0.12}s`,
               }}
             />
           ))}
@@ -115,7 +98,7 @@ export function Preloader() {
         <div className={styles.tagline}>Ponorogo Nightlife Experience</div>
 
         <div className={styles.progressTrack} aria-hidden="true">
-          <div className={styles.progressBar} style={{ width: `${progress}%` }} />
+          <div className={styles.progressBar} />
         </div>
       </div>
     </div>
